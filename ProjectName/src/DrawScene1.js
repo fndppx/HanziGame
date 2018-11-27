@@ -1,134 +1,60 @@
 
 var outlineDictionary = [];
 
-var DrawLayer = cc.Layer.extend({
-    bgSprite:null,
-    hanziSprite:null,
+var DrawScene1 = cc.Sprite.extend({
 
     ctor:function(){
         this._super();
 
+        // this._bgLayer.color = cc.color.WHITE.color;
         var size = cc.winSize;
         this.bgColor = cc.color.WHITE;
 
+        // console.log("+++++++",this.pointsInPolygon(this.getDots(),[107,293]));
 
+        // add bg
+        // this.attr({
+        //     x: 0,
+        //     y: this.height,
+        //     //scale: 0.5,
+        //     // rotation: 180
+        // });
 
         var drawNode =new cc.DrawNode();
 
         this.drawNode = drawNode;
-        // this.addChild(drawNode,10);
 
-        // this.addTouchEventListener();
+        // this.drawNode.drawQuadBezier(cc.p(0, cc.winSize.height), cc.p(0, 100), cc.p(cc.winSize.width, cc.winSize.height), 50, 2, cc.color(255, 0, 255, 255));
 
-        // var label = new cc.LabelTTF("飞", "STKaiti", 350);
-        // label.x = 400;
-        // label.y = 400;
-        // // label.setString("aaaaa");
-        // label.enableStroke(cc.color.RED,1);
-        // label.outlineWidth = 1;
-        // label.color = cc.color.WHITE;
+        // this.setColor(cc.color.WHITE);
+
+        cc.log(cc.winSize.height);
+
+        this.addChild( drawNode,1 );
+
+        this.addTouchEventListener();
+
+        var label = new cc.LabelTTF("飞", "STKaiti", 350);
+        label.x = 400;
+        label.y = 400;
+        // label.setString("aaaaa");
+        label.enableStroke(cc.color.RED,1);
+        label.outlineWidth = 1;
+        label.color = cc.color.WHITE;
         // label.outlineColor = cc.color.WHITE;
         // this.addChild(label,0);
 
 
+        var ss = this.getStrokeRatio();
+        cc.log(ss);
 
-        // add bg
-        this.bgSprite = new cc.Sprite(res.Drw_png,cc.rect(0,0,size.width,size.height));
-        this.bgSprite.attr({
-            x : size.width / 2,
-            y: size.height / 2,
+        for (var i = 0;i<1;i++){
+            this.makePath(i);
 
-        });
-        this.bgSprite.setTextureRect(cc.rect(0,0,size.width,size.height));
-        this.addChild(this.bgSprite, 0);
+            this.makeMedian(i);
 
-        cc.log("winSize>>>>>bgSpriteSize>>>>>>",size,this.bgSprite.getBoundingBox());
-
-        // auto sprite_pai_back = Sprite::create("lianhuan_button_sure.png");
-        // sprite_pai_back->setPosition(size.width/2,size.height/2);
-        // sprite_pai_back->setAnchorPoint(Point(0.5,0.5));
-        // //根据缩放设置实际大小
-        // Size size_pai = sprite_pai_back->getContentSize();
-        // //根据实际宽度和总宽度，计算期望缩放比率
-        // float scaleX_pai = (float)size.width*0.1f / (float)size_pai.width;
-        // float scaleY_pai = (float)size.height*0.1f / (float)size_pai.height;
-
-
-        this.hanziSprite = new wordSprite(res.Font_png);
-        cc.log("size>>>>",size);
-        this.hanziSprite.attr({
-            x :0,
-            y: 0,
-            // x:(size.width-320)/2,
-            // y:(size.height-320)/2,
-            anchorX:0,
-            anchorY:0,
-        });
-
-
-        // this.hanziSprite.setContentSize(400,400);
-         var  size_hanzi = this.hanziSprite.getContentSize();
-         let  scaleX = 320/size_hanzi.height;
-         let  scaleY = 320/size_hanzi.height;
-
-        this.hanziSprite.setScale(scaleX,scaleY);
-
-        this.hanziSprite.setColor(cc.color.WHITE);
-        this.bgSprite.addChild(this.hanziSprite, 10);
-
-        cc.log("hanziSize>>>>>>",this.hanziSprite.getBoundingBox(),this.hanziSprite.getPosition());
-
+        }
         //文字
-
-        // cc.loader.loadTxt("res.Font_png",function(err,data){
-        //     if(err){
-        //         return console.log("load failed");
-        //     }
-        //     else {
-        //         cc.log("load success");
-        //
-        //     }
-        // });
-        // jsb.fileUtils.fullPathFromRelativeFile(res.Res_Trace);
-
-        var startItem = new cc.MenuItemImage(
-            res.Start_N_png,
-            res.Start_S_png,
-            function(){
-                console.log("menu is clicked");
-
-             // this.hanziSprite.removeFromParent();
-
-                // cc.director.replaceScene( cc.TransitionPageTurn(1, new PlayScene(), false) );
-this.hanziSprite.reset();
-
-                // var transition=new cc.TransitionPageTurn(1,(new PlayScene()),true);
-                // cc.director.pushScene(new cc.TransitionPageTurn(2,(new DrawScene()),false));
-
-            },this);
-
-        startItem.attr({
-            x:size.width/2+100,
-            y:size.height/2,
-            scale:0.2,
-            anchorX:0.5,
-            anchorY:0.5
-        });
-
-        var  menu = new cc.Menu(startItem);
-        // menu.setContentSize(100,100);
-        menu.x = 0;
-        menu.y = 0;
-        this.addChild(menu,1);
-        // var button = new ccui.Button(res.Start_N_png);
-        // button.setTouchEnabled(true);
-        // button.setTitleText("button text");
-        // // button.loadTextures();
-        // button.x = 400;
-        // button.y = 200;
-        // // button.addTouchEventListener(this.touchEvent, this);
-        // this.addChild(button);
-        //
 
         return true;
     },
@@ -226,7 +152,8 @@ this.hanziSprite.reset();
             }
             // cc.PathConstraintData()
 
-              // new cc.Sprite();
+            // new cc.Sprite();
+
         }
     },
 
@@ -253,7 +180,7 @@ this.hanziSprite.reset();
                 var x = finalPathArray[counter+1]*ratio;
                 var y = cc.winSize.height-finalPathArray[counter+2]*ratio;
 
-                //cc.log("y>>>>>>",x,y,finalPathArray[counter+2]*ratio);
+                cc.log("y>>>>>>",x,y,finalPathArray[counter+2]*ratio);
                 this.drawNode.drawDot(cc.p(x,offset -y),lineWidth,cc.color.BLUE);
                 lastPos = cc.p(x,offset-y);
                 counter += 3;
@@ -267,6 +194,7 @@ this.hanziSprite.reset();
 
                 this.drawNode.drawQuadBezier(lastPos, cc.p(x1,offset-y1), cc.p(x2,offset-y2), 50, lineWidth, cc.color.RED);
                 lastPos = cc.p(x2,offset-y2);
+                this.shape
                 counter += 5;
             }
             if (token == "L"){
@@ -289,65 +217,152 @@ this.hanziSprite.reset();
         return max_size/1024;
     },
 
-    // addTouchEventListener:function(){
-    //     var  that = this;
-    //     var lastPoint = null;
-    //     cc.log(this);
-    //     var lineWidth = 1;
-    //
-    //     this.touchListener = cc.EventListener.create({
-    //         event: cc.EventListener.TOUCH_ONE_BY_ONE,
-    //         swallowTouches: true,
-    //
-    //         onTouchBegan: function (touch, event) {
-    //             var pos = touch.getLocation();
-    //             var target = event.getCurrentTarget();
-    //             console.log("bg touch>>>>>>>",pos);
-    //             // pos.y+=300;
-    //             //that.drawNode.drawDot(cc.p(pos.x,pos.y),lineWidth,cc.color.RED);
-    //             lastPoint = pos;
-    //             // console.log("touch+++++++",that.pointsInPolygon(that.getDots(),[pos.x,pos.y]));
-    //
-    //             return true;
-    //         },
-    //
-    //         onTouchMoved: function (touch,event) {
-    //
-    //
-    //             var pos = touch.getLocation();
-    //             // pos.y+=300;
-    //
-    //             console.log("move>>>>>>>",pos);
-    //
-    //             var lastPos = touch.getPreviousLocation();
-    //
-    //             // console.log(this.drawNode.getPreviousLocation());
-    //             //that.drawNode.drawSegment(cc.p(lastPos.x,lastPos.y),cc.p(pos.x,pos.y),lineWidth,cc.color.RED);
-    //
-    //             // that.drawNode.contains
-    //             // cc.log(pos);
-    //
-    //             console.log("bg move+++++++",that.pointsInPolygon(that.getDots(),[pos.x,pos.y]));
-    //
-    //
-    //             return true;
-    //
-    //         },
-    //
-    //     });
-    //     cc.eventManager.addListener(this.touchListener,this);
-    //
-    // },
+    addTouchEventListener:function(){
+        var  that = this;
+        var lastPoint = null;
+        cc.log(this);
+        var lineWidth = 1;
+
+        this.touchListener = cc.EventListener.create({
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            swallowTouches: true,
+
+            onTouchBegan: function (touch, event) {
+                var pos = touch.getLocation();
+                var target = event.getCurrentTarget();
+                console.log("touch>>>>>>>",pos);
+                // pos.y+=300;
+                that.drawNode.drawDot(cc.p(pos.x,pos.y),lineWidth,cc.color.RED);
+                lastPoint = pos;
+                console.log("touch+++++++",that.pointsInPolygon(that.getDots(),[pos.x,pos.y]));
+
+                return true;
+            },
+
+            onTouchMoved: function (touch,event) {
 
 
+                var pos = touch.getLocation();
+                // pos.y+=300;
 
-})
+                console.log("move>>>>>>>",pos);
 
-var DrawScene = cc.Scene.extend({
-    onEnter:function () {
-        this._super();
-        var layer = new DrawLayer();
-        this.addChild(layer);
+                var lastPos = touch.getPreviousLocation();
+
+                // console.log(this.drawNode.getPreviousLocation());
+                that.drawNode.drawSegment(cc.p(lastPos.x,lastPos.y),cc.p(pos.x,pos.y),lineWidth,cc.color.RED);
+
+                // that.drawNode.contains
+                // cc.log(pos);
+
+                console.log("move+++++++",that.pointsInPolygon(that.getDots(),[pos.x,pos.y]));
+
+
+                return true;
+
+            },
+
+        });
+        cc.eventManager.addListener(this.touchListener,this);
+
+    },
+
+    //判断点是否在区域内
+    judgeDotIsInner:function(x1,y1,x2,y2,x,y){
+        var minX = 0,maxX = 0,minY = 0,maxY = 0;
+        minX = x1;
+        maxX = x2;
+        minY = y1;
+        maxY = y2;
+
+        if (minX > maxX){
+            minX = x2;
+            maxX = x1;
+        }
+
+        if (minY > maxY) {
+            minY = y2;
+            maxY = y1;
+        }
+        // 射线
+        if (y < minY || y > maxY || x < minX) {
+            return 0;
+        }
+        // 对比线垂直的情况， 这段可以快速判断出对比线段垂直的情况, (不过感觉没必要判断,不要这段代码也行.)
+        if (minX == maxX) {
+            // y值只有两种(1 在线段y值中，2 和线段y值外(必不相交, 前面已经排除了), 这里排除掉在末端点y2上的情况)
+            if(y == y2)
+                return 0;
+            // 剩下的y在minY和maxY之间
+            // 1 如果x == minx也相等， 表示在对比线上，返回-1;
+            // 2 如果x < minX 则肯定不相交, 返回 0;
+            // 3 那么 x> minX时， 肯定相交， 返回1.
+            if (x == minX)
+                return -1;
+            else if (x < minX)
+                return 0;
+            else
+                return 1;
+        }
+        // 对比线平行的情况
+        if (minY == maxY) {
+            // 在前面排除掉 y < minY 和 y > maxY 的情况后只剩下，y和两个y值相等的情况, 即触摸点与这个对比线在一条线上
+            // 前面判断过x < minX的情况， 如果x<maxX 则表示在线上(排除与末端点x2相等的情况)
+            if(x <= maxX && x != x2)
+                return -1;
+            else
+                return 0;
+        }
+        // 剩下的情况, 计算射线与边所在的直线的交点的横坐标
+        var x0 = x1 + ((x2 - x1) / (y2 - y1)) * (y - y1);
+        // 交点在射线右侧，不相交
+        if (x0 > x)
+            return 0;
+        else if (x0 == x) {
+            return -1;
+        }
+        // 穿过下端点不计
+        if (x0 == x2) {
+            return 0;
+        }
+        return 1;
+
+    },
+
+    pointsInPolygon:function(pArray,pos){
+        var count = pArray.length;
+        // 在多边形内的数量
+        var nCount = 0;
+        // 返回值
+        var nFlag = 0;
+        for (var i = 0; i < count; ++i) {
+            var next = i + 1;
+            if (next == length)
+                break;
+            // var pos1 = pArray.getControlPointAt(i);
+            var pos1 = cc.getControlPointAt(pArray,i);
+
+            var pos2 = cc.getControlPointAt(pArray,next);
+
+            // nFlag = this.judgeDotIsInner(pos1.x,pos1.y,pos2.x,pos2.y, pos.x, pos.y);
+            nFlag = this.judgeDotIsInner(pos1[0],pos1[1],pos2[0],pos2[1], pos[0], pos[1]);
+
+
+            if (-1 == nFlag) {
+                // 在线上
+                return 2;
+            }
+            if (1 == nFlag)
+                nCount += 1;
+        }
+        if (1 == nCount % 2) {
+            // 在里面
+            return 1;
+        } else {
+            // 不在里面
+            return 0;
+        }
 
     }
-});
+
+})

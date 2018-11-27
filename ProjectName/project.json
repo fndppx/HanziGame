@@ -19,7 +19,10 @@
         "src/PlayScene.js",
         "src/SushiSprite.js",
         "src/DrawScene.js",
-        "src/DrawSprite.js"
+        "src/DrawSprite.js",
+        "src/wordSprite.js",
+        "src/MoveSprite.js"
+
 
     ]
 }

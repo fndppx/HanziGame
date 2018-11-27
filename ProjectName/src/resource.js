@@ -27,9 +27,13 @@ var res = {
     BackGround_png : "res/background.png",
     Start_N_png : "res/start_N.png",
     Start_S_png : "res/start_S.png",
-    // Sushi_png : "res/sushi_1n/sushi_1n.png",
     Sushi_plist : "res/sushi.plist",
-    Sushi_png : "res/sushi.png"
+    Sushi_png : "res/sushi.png",
+    Drw_png : "res/bg.jpg",
+    Font_png : "res/trace_ba_1.png",
+    Res_Trace : "res/trace_ba1.txt",
+
+
 };
 
 var g_resources = [];
