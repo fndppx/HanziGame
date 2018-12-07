@@ -19,7 +19,7 @@ var MainMenuLayer = cc.Layer.extend({
 
         var item2 = new cc.MenuItemFont("语音评测", this.menuItem2Callback, this);
 
-        var item3 = new cc.MenuItemFont("笔顺", this.menuItem2Callback, this);
+        var item3 = new cc.MenuItemFont("笔顺", this.menuItem3Callback, this);
 
         var  mn = new cc.Menu(item1, item2,item3);
         mn.alignItemsVerticallyWithPadding(10);
@@ -41,6 +41,14 @@ var MainMenuLayer = cc.Layer.extend({
         var ret = jsb.reflection.callStaticMethod("JSBManager",
             "gotoXunFeiISE");
     },
+
+    menuItem3Callback:function (sender) {
+        cc.log("Touch Help Menu Item " + sender);
+        cc.director.runScene(new cc.TransitionFade(0.3, new StrokesScene()));
+
+    },
+
+
 });
 
 
