@@ -1,0 +1,34 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : false,
+    "frameRate" : 60,
+    "noCache" : false,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d"],
+
+    "jsList" : [
+        "src/resource.js",
+        "src/app.js",
+        "src/resource.js",
+        "src/StartScene.js",
+
+        "src/Draw/sprite/DrawSprite.js",
+        "src/Draw/sprite/wordSprite.js",
+        "src/Draw/sprite/MoveSprite.js",
+        "src/Draw/scene/DrawScene.js",
+        "src/config/GameConfig.js",
+        "src/Draw/layer/DrawBgLayer.js",
+        "src/config/GameConfig.js",
+        "src/Tools/GameTools.js",
+        "src/Draw/scene/WriteHanziScene.js",
+        "src/MainMenu/MainMenuScene.js",
+        "src/MainMenu/VideoScene.js"
+
+
+    ]
+}
