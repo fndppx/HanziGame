@@ -27,7 +27,11 @@
         "src/Tools/GameTools.js",
         "src/Draw/scene/WriteHanziScene.js",
         "src/MainMenu/MainMenuScene.js",
-        "src/MainMenu/VideoScene.js"
+        "src/MainMenu/VideoScene.js",
+        "src/Strokes/scene/StrokesScene.js",
+
+        "src/Strokes/layer/StrokesMattsLayer.js",
+        "src/Strokes/scene/hanzi-writer.min.js"
 
 
     ]

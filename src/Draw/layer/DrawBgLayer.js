@@ -21,7 +21,6 @@ var DrawBgLayer = cc.Layer.extend({
     },
 
     playMusic:function(){
-        cc.video
-        cc.audioEngine.playMusic(res.Res_BgMusic_Mp3, true);
+        // cc.audioEngine.playMusic(res.Res_BgMusic_Mp3, true);
     },
 });

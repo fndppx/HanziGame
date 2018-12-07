@@ -17,7 +17,6 @@ var wordSprite = cc.Sprite.extend({
         this.addChild(drawNode,0);
         this.setBihuaIndex(bihuaIndex);
 
-        // this.schedule(this.update,1,16*1024,1);
     },
 
     onEnter:function () {
