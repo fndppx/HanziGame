@@ -36,10 +36,11 @@
         "src/HitMouse/scene/HitMouseScene.js",
         "src/HitMouse/sprite/MouseSprite.js",
         "src/HitMouse/layer/HitMouseAlert.js",
-        "src/HitMouse/layer/BaseLayer.js"
+        "src/HitMouse/layer/BaseLayer.js",
 
-
-
+        "src/JointTrain/layer/JointTrainBgLayer.js",
+        "src/JointTrain/scene/JointTrainScene.js",
+        "src/JointTrain/sprite/TrainCarriageSprite.js"
 
 
 

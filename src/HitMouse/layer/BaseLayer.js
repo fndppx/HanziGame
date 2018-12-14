@@ -1,8 +1,8 @@
 
 var BaseLayer = cc.LayerColor.extend({
     listener:null,
-    ctor:function(){
-        this._super(cc.color(0,0,0,180),640,960);
+    ctor:function(color){
+        this._super(color);
         //使得下层的点击事情无效
         this.listener = cc.EventListener.create({
             event: cc.EventListener.TOUCH_ONE_BY_ONE,

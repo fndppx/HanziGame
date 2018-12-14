@@ -36,6 +36,8 @@ var res = {
     Res_BgMusic_Mp3 : "res/bgMusic.mp3",
     Res_Eat_Mp3 : "res/eat.mp3",
     Res_mouse:"res/HitMouse/mole_thump1.png",
+    train_header:"res/jointTrain/trainHeader.png",
+    train_carriage:"res/jointTrain/train_carriage.png",
 
 
 

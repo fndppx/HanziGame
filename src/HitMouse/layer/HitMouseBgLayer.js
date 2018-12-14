@@ -34,8 +34,6 @@ var HitMouseBgLayer = cc.Layer.extend({
         }
         cc.log(this._holeArray);
 
-
-
         var label = new cc.LabelTTF(__count, "STKaiti", 20);
         label.setAnchorPoint(1,1);
         label.x = this.width-50;
@@ -43,7 +41,6 @@ var HitMouseBgLayer = cc.Layer.extend({
         label.color = cc.color.RED;
         this.addChild(label);
         this._timerLabel = label;
-
 
         var self = this;
 
@@ -250,5 +247,12 @@ var HitMouseBgLayer = cc.Layer.extend({
         cc.eventManager.addListener(this.touchListener.clone(),mouse);
 
     },
+
+    onEnd:function(){
+        this._super();
+        this.unscheduleAllCallbacks();
+
+
+    }
 
 });
