@@ -21,7 +21,9 @@ var MainMenuLayer = cc.Layer.extend({
 
         var item3 = new cc.MenuItemFont("笔顺", this.menuItem3Callback, this);
 
-        var  mn = new cc.Menu(item1, item2,item3);
+        var item4 = new cc.MenuItemFont("打地鼠", this.menuItem4Callback, this);
+
+        var  mn = new cc.Menu(item1, item2,item3,item4);
         mn.alignItemsVerticallyWithPadding(10);
         this.addChild(mn);
 
@@ -43,6 +45,12 @@ var MainMenuLayer = cc.Layer.extend({
     },
 
     menuItem3Callback:function (sender) {
+        cc.log("Touch Help Menu Item " + sender);
+        cc.director.runScene(new cc.TransitionFade(0.3, new StrokesScene()));
+
+    },
+
+    menuItem4Callback:function (sender) {
         cc.log("Touch Help Menu Item " + sender);
         cc.director.runScene(new cc.TransitionFade(0.3, new StrokesScene()));
 

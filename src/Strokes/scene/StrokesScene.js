@@ -22,21 +22,40 @@ var StrokesLayer = cc.Layer.extend({
     _currentIndex:0,
     //轮廓的drawNode
     _pathDrawNode:null,
+    _strokeDrawNode:null,
+
     _timer_status:0,
 
     _currentButton:null,
     _buttonIsSelected:false,
+    _moveSprite:null,
+    _selectIndex:0,
+
 
     ctor:function(){
         this._super();
 
+
+        var moveSprite =  new StrokeMoveSprite(res.HelloWorld_png);
+
+        this.addChild(moveSprite,10);
+
+        this._moveSprite = moveSprite;
+
         var bgLayer = new DrawBgLayer();
         this.addChild(bgLayer);
+
+
         // cc.director.setClearColor(cc.color.WHITE);
 
         //轮廓绘图node
         this._pathDrawNode = new cc.DrawNode();
         this.addChild(this._pathDrawNode);
+
+
+        this._strokeDrawNode = new cc.DrawNode();
+        this.addChild(this._strokeDrawNode,9);
+
         //graphics
         var graphicsDictionary = [];
 
@@ -75,52 +94,118 @@ var StrokesLayer = cc.Layer.extend({
 
                 that.layoutHanzi();
 
+                that.makeMedian(0);
+
             }
 
         });
 
-        // this.schedule(this.update,1,16*1024,1);
+
+        this._currentButton = new ccui.Button();
+        this._currentButton.setTouchEnabled(true);
+        this._currentButton.setTitleFontSize(20);
+        this._currentButton.setPressedActionEnabled(true);
+        this._currentButton.setTitleText("下一字");
+        this._currentButton.x = GC.w-100;
+        this._currentButton.y = GC.h-80;
+        this._currentButton.addTouchEventListener(function(sender,state){
+
+            // if (that._buttonIsSelected){
+            //
+            // } else {
+            //
+            // }
+
+            switch (state)
+            {
+                case ccui.Widget.TOUCH_BEGAN:
+                    sender.setBright(false);
+                    break;
+
+                case ccui.Widget.TOUCH_MOVED:
+                    sender.setBright(false);
+                    break;
+
+                case ccui.Widget.TOUCH_ENDED:
+                    sender.setBright(true);
 
 
-        // this._currentButton = new ccui.Button();
-        // this._currentButton.setTouchEnabled(true);
-        // this._currentButton.setTitleFontSize(20);
-        // this._currentButton.setPressedActionEnabled(true);
-        // this._currentButton.setTitleText("演示笔顺");
-        // this._currentButton.x = GC.w-100;
-        // this._currentButton.y = GC.h-80;
-        // this._currentButton.addTouchEventListener(function(){
-        //
-        //     if (that._buttonIsSelected){
-        //         that.stopTimer();
-        //
-        //     } else {
-        //         that.startTimer();
-        //
-        //     }
-        //
-        //
-        //     // cc.Director.popScene();
-        //     that._buttonIsSelected = !that._buttonIsSelected;
-        //
-        // },this);
-        // this.addChild(this._currentButton);
-        //
-        //
-        // var button = new ccui.Button();
-        // button.setTouchEnabled(true);
-        // button.setTitleFontSize(20);
-        // button.setPressedActionEnabled(true);
-        // button.setTitleText("Back");
-        // button.x = 50;
-        // button.y = GC.h-80;
-        // button.addTouchEventListener(function(){
-        //     cc.director.runScene(new cc.TransitionFade(0.3, new MainMenuScene()));
-        //
-        // },this);
-        // this.addChild(button);
+                    cc.removeSelf();
+
+                    this._strokeDrawNode.clear();
+
+                    this._pathDrawNode.clear();
+
+                    this._moveSprite.removeFromParent(true);
+                    this._moveSprite = null;
+                    this._selectIndex++;
+                    if (this._selectIndex >hanziArr.length-1){
+                        this._selectIndex = 0;
+                    }
+
+                    var index = graphics_dictionary[hanziArr[this._selectIndex]];
+
+                    var data = this._dataArray[index];
+                    //解析json
+                    this._outlineDictionary = JSON.parse(data);
+
+
+                    this._medians = this._outlineDictionary["medians"]
+
+                    this._totalstrokes = this._medians.length;
+                    for (var i = 0;i<this._totalstrokes;i++){
+                        this.makePath(i);
+                    }
+
+                    this.layoutHanzi();
+                    this.makeMedian(_current_stroke);
+
+                    break;
+
+                // case ccui.Widget.TOUCH_CANCELLED:
+                //     sender.setBright(true);
+                //     break;
+                default:
+                    break;
+
+            }
+
+
+            // // cc.Director.popScene();
+            // that._buttonIsSelected = !that._buttonIsSelected;
+
+
+
+
+
+
+        },this);
+        this.addChild(this._currentButton);
+
+
+        var button = new ccui.Button();
+        button.setTouchEnabled(true);
+        button.setTitleFontSize(20);
+        button.setPressedActionEnabled(true);
+        button.setTitleText("Back");
+        button.x = 50;
+        button.y = GC.h-80;
+        button.addTouchEventListener(function(){
+            cc.director.runScene(new cc.TransitionFade(0.3, new MainMenuScene()));
+
+        },this);
+        this.addChild(button);
         // this.startTimer();
 
+        // var aa =  new StrokeMoveSprite(res.HelloWorld_png);
+        // aa.x = 100;
+        // aa.y = 100;
+        // this.addChild(aa,10);
+        //
+        // var moveto = cc.moveTo(2,cc.p(200,100));
+        // aa.runAction(moveto);
+        // var move = cc.moveBy(2, cc.p(winSize.width - 80, 0));
+        // var move_back = move.reverse();
 
     },
 
@@ -236,7 +321,13 @@ var StrokesLayer = cc.Layer.extend({
         // let  lineWidth = 10;
         var ratio = this.getStrokeRatio();
 
+        if (this._moveSprite==null){
+            var moveSprite =  new StrokeMoveSprite(res.HelloWorld_png);
+            this._moveSprite = moveSprite;
+            this.addChild(moveSprite,10);
+        }
 
+        var animationArray = [];
         // lineWidth = _current_stroke_width * ratio;
         for (var i = 0;i<finalPathArray.length;i++){
             var token = finalPathArray[i];
@@ -244,24 +335,47 @@ var StrokesLayer = cc.Layer.extend({
             var y =cc.winSize.height - token.y*ratio;
 
             if (i == 0){
-                this._pathDrawNode.drawDot(cc.p(x,offset -y),lineWidth,cc.color.BLUE);
+
                 lastPos = cc.p(x,offset -y);
+
+                this._moveSprite.setPosition(lastPos);
 
             } else {
 
-                this._pathDrawNode.drawSegment(lastPos,cc.p(x,offset-y),lineWidth,cc.color.WHITE);
+                // this._pathDrawNode.drawSegment(lastPos,cc.p(x,offset-y),lineWidth,cc.color.WHITE);
                 lastPos = cc.p(x,offset -y);
+
+                var moveS = cc.moveTo(1,lastPos);
+
+                animationArray.push(moveS);
             }
 
         }
 
-        // this._pathDrawNode.
-        // CGContextSetLineWidth(context, _current_stroke_width * ratio);
-        // CGContextSetLineCap(context, kCGLineCapRound);
-        // // Fill the path with dash line, change phase from length to zero is wonderful.
-        // CGFloat dashLengths[] = {2048.0f * ratio, 2048.0f * ratio};
-        // CGContextSetLineDash(context, _current_stroke_phase * ratio, dashLengths, 2);
-        // CGContextStrokePath(context);
+
+
+        // var drawN = new cc.DrawNode();
+        // this.addChild(drawN,20);
+
+        var callback = function(){
+
+            if (_current_stroke < this.getStrokeCount()-1) {
+                _current_stroke++;
+                this.makeMedian(_current_stroke);
+            }
+
+        };
+
+        var that = this;
+        this._moveSprite.callbackBlk(function(dt){
+
+            that._strokeDrawNode.drawDot(cc.p(dt.x+32,dt.y+32),1,cc.color.BLUE);
+
+        });
+        animationArray.push(cc.callFunc(callback,this,1));
+
+        var seq = cc.sequence(animationArray);
+        this._moveSprite.runAction(seq);
 
     },
 
@@ -300,12 +414,7 @@ var StrokesLayer = cc.Layer.extend({
 
     drawRect:function(){
         if (_current_stroke < this.getStrokeCount()) {
-            // Make a path
-            // this.makePath(_current_stroke);
-            // Make a median
             this.makeMedian(_current_stroke);
-
-
         }
     },
 
@@ -420,11 +529,11 @@ var StrokesLayer = cc.Layer.extend({
     },
 
     startTimer:function(){
-        this.schedule(this.updateData,(1/60.0));
+        // this.schedule(this.updateData,(1/60.0));
     },
 
     stopTimer:function(){
-        this.unschedule(this.updateData);
+        // this.unschedule(this.updateData);
     },
 
 

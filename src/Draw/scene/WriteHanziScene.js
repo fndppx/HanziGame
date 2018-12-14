@@ -193,7 +193,6 @@ var WriteHanziLayer = cc.Layer.extend({
         }
         var a = new GameTools(m_medians,4);
 
-
         finalPathArray =  a.getSpacingPoints();
         // finalPathArray = m_medians;
 

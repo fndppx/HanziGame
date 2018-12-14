@@ -34,7 +34,8 @@ var res = {
     Res_Trace : "res/trace_ba1.txt",
     Res_Luobu : "res/luobu.png",
     Res_BgMusic_Mp3 : "res/bgMusic.mp3",
-    Res_Eat_Mp3 : "res/eat.mp3"
+    Res_Eat_Mp3 : "res/eat.mp3",
+    Res_mouse:"res/HitMouse/mole_thump1.png",
 
 
 

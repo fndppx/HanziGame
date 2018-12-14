@@ -31,7 +31,20 @@
         "src/Strokes/scene/StrokesScene.js",
 
         "src/Strokes/layer/StrokesMattsLayer.js",
-        "src/Strokes/scene/hanzi-writer.min.js"
+        "src/Strokes/sprite/StrokeMoveSprite.js",
+        "src/HitMouse/layer/HitMouseBgLayer.js",
+        "src/HitMouse/scene/HitMouseScene.js",
+        "src/HitMouse/sprite/MouseSprite.js",
+        "src/HitMouse/layer/HitMouseAlert.js",
+        "src/HitMouse/layer/BaseLayer.js"
+
+
+
+
+
+
+
+
 
 
     ]
