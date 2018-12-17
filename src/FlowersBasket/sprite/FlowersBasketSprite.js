@@ -1,5 +1,5 @@
 var FlowersBasketSprite = cc.Sprite.extend({
-
+    _type:-1,
    ctor:function(img,title){
        this._super(img);
 
