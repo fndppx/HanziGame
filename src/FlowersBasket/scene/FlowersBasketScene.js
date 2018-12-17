@@ -7,11 +7,26 @@ var FlowersBasketLayer = cc.Layer.extend({
 
     ctor:function() {
         this._super();
-        var layer = new cc.LayerColor(cc.color.WHITE);
+        var layer = new cc.LayerColor(cc.color(123,204,204,255));
         layer.x = 0;
         layer.y = 0;
         layer.setAnchorPoint(0,0);
         this.addChild(layer);
+
+        var button = new ccui.Button();
+        button.setTouchEnabled(true);
+        button.setTitleFontSize(20);
+        button.setPressedActionEnabled(true);
+        button.setTitleText("Back");
+        button.x = 50;
+        button.y = GC.h-20;
+        var self = this;
+        button.addTouchEventListener(function(){
+            cc.director.runScene(new cc.TransitionFade(0.3, new MainMenuScene()));
+
+
+        },this);
+        this.addChild(button);
 
         // this._flowersBasketArray = ['科目','时间','人称'];
 

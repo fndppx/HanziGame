@@ -9,7 +9,7 @@ var JointTrainLayer = cc.Layer.extend({
        this._wordIndex = 0;
        this._wordsArray = ['仿佛','貌似','正好','好像'];
 
-       var layer = new cc.LayerColor(cc.color.WHITE);
+       var layer = new cc.LayerColor(cc.color(123,204,204,255));
        layer.x = 0;
        layer.y = 0;
        layer.setAnchorPoint(0,0);
@@ -19,7 +19,7 @@ var JointTrainLayer = cc.Layer.extend({
        trainHeader.setAnchorPoint(0,0);
        trainHeader.x = 0;
        trainHeader.y = 50
-       this.addChild(trainHeader);
+       this.addChild(trainHeader,1);
 
        var gapWidth = 10;
 
@@ -27,7 +27,7 @@ var JointTrainLayer = cc.Layer.extend({
        validArea.setContentSize(GC.w-trainHeader.getContentSize().width,trainHeader.getContentSize().height);
        validArea.x = trainHeader.getContentSize().width;
        validArea.y = trainHeader.y;
-       this.addChild(validArea);
+       this.addChild(validArea,2);
 
        var self = this;
 
@@ -90,7 +90,20 @@ var JointTrainLayer = cc.Layer.extend({
        //     this.addChild(train);
        // }
 
+       var button = new ccui.Button();
+       button.setTouchEnabled(true);
+       button.setTitleFontSize(20);
+       button.setPressedActionEnabled(true);
+       button.setTitleText("Back");
+       button.x = 50;
+       button.y = GC.h-20;
+       var self = this;
+       button.addTouchEventListener(function(){
+           cc.director.runScene(new cc.TransitionFade(0.3, new MainMenuScene()));
 
+
+       },this);
+       this.addChild(button,10);
 
    }
 });

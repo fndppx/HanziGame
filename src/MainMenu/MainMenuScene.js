@@ -29,8 +29,19 @@ var MainMenuLayer = cc.Layer.extend({
 
         }, this);
 
+        var item6 = new cc.MenuItemFont("花篮游戏", function(){
 
-        var  mn = new cc.Menu(item1, item2,item3,item4,item5);
+            cc.director.runScene(new cc.TransitionFade(0.3, new FlowersBasketScene()));
+
+        }, this);
+
+        var item7 = new cc.MenuItemFont("拼字", function(){
+
+            cc.director.runScene(new cc.TransitionFade(0.3, new SpellWordsScene()));
+
+        }, this);
+
+        var  mn = new cc.Menu(item1, item2,item3,item4,item5,item6,item7);
         mn.alignItemsVerticallyWithPadding(10);
         this.addChild(mn);
 

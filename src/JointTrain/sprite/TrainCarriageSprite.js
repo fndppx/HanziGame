@@ -15,7 +15,7 @@ var  TrainCarriageSprite = cc.Sprite.extend({
         label.x = this.width/2;
         label.y = this.height/2;
         label.color = cc.color.BLACK;
-        this.addChild(label);
+        this.addChild(label,1);
         this._title = title;
 
       this._listener =  cc.eventManager.addListener({

@@ -45,7 +45,15 @@
 
         "src/FlowersBasket/scene/FlowersBasketScene.js",
         "src/FlowersBasket/sprite/FlowersBasketSprite.js",
-        "src/FlowersBasket/sprite/FlowersSprite.js"
+        "src/FlowersBasket/sprite/FlowersSprite.js",
+
+        "src/SpellWords/scene/SpellWordsScene.js",
+        "src/SpellWords/sprite/ScrollSelector.js",
+        "src/SpellWords/layer/PickerView.js"
+
+
+
+
 
 
 
