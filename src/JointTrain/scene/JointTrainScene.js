@@ -48,7 +48,7 @@ var JointTrainLayer = cc.Layer.extend({
                cc.log(rect,rect1);
                if (cc.rectIntersectsRect(rect,rect1))
                {
-                   cc.log('重叠>>>>>>',);
+                   cc.log('重叠>>>>>>');
 
                    p.x = trainHeader.x+trainHeader.getContentSize().width+10+(70+10)*self._wordIndex;
                    p.y = trainHeader.y+20;

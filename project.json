@@ -40,7 +40,13 @@
 
         "src/JointTrain/layer/JointTrainBgLayer.js",
         "src/JointTrain/scene/JointTrainScene.js",
-        "src/JointTrain/sprite/TrainCarriageSprite.js"
+        "src/JointTrain/sprite/TrainCarriageSprite.js",
+
+
+        "src/FlowersBasket/scene/FlowersBasketScene.js",
+        "src/FlowersBasket/sprite/FlowersBasketSprite.js",
+        "src/FlowersBasket/sprite/FlowersSprite.js"
+
 
 
 
