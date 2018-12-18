@@ -77,12 +77,19 @@ var SpellWordsLayer = cc.Layer.extend({
                     //     }
                     // }
 
-
-                        var  countOffset = offset_y;
+                    //CGFloat countOffset = offset-count*(self.lableMid+self.lableWidth);
+                    //return;
+                    var maxHeight = 100;
+                    var minHeight = 50;
+                    var countOffset = offset_y-count*(40+10);
+                    console.log('offsetRait>>>>>>>>>>>offset_y>>>>>',countOffset,offset_y);
+                    //return;
 
                         var offsetRait = 1;
                         if (countOffset != 0){
-                            offsetRait = 1-countOffset/(40+10);
+                            offsetRait = 1- countOffset/(40+10);
+
+                            console.log('offsetRait>>>>>>>>>>>',countOffset);
                         }
 
 
@@ -91,40 +98,58 @@ var SpellWordsLayer = cc.Layer.extend({
                             showingLab = self._labelArray[count];
                         }
 
-                        var maxHeight = 50;
-                        var minHeight = 40;
-
 
                         if (showingLab){
-                            showingLab.setRect(showingLab.x,(maxHeight-minHeight)*(1-offsetRait),showingLab.width,minHeight+
-                                (maxHeight-minHeight)*offsetRait);
+
+                            showingLab.setPosition(cc.p((maxHeight-minHeight)*(1-offsetRait),showingLab.getPosition().y));
+                            showingLab.setContentSize(minHeight+
+                                (maxHeight-minHeight)*offsetRait,showingLab.height);
+                            //showingLab.setRect(showingLab.x,(maxHeight-minHeight)*(1-offsetRait),showingLab.width,minHeight+
+                            //    (maxHeight-minHeight)*offsetRait);
+
+
                         }
 
                         if (count < items.length-1){
                             var nextLab = self._labelArray[count+1];
                             if (nextLab){
-                                nextLab.setRect(nextLab.x,(maxHeight-minHeight)*(1-offsetRait),nextLab.width,minHeight+
-                                    (maxHeight-minHeight)*offsetRait);
+                                //nextLab.setRect(nextLab.x,(maxHeight-minHeight)*(1-offsetRait),nextLab.width,minHeight+
+                                //    (maxHeight-minHeight)*offsetRait);
+
+                                showingLab.setPosition(cc.p((maxHeight-minHeight)*(1-offsetRait),nextLab.getPosition().y));
+                                showingLab.setContentSize(minHeight+
+                                    (maxHeight-minHeight)*offsetRait,nextLab.height);
                             }
                         }
                         if (count > 0){
 
                             var lastLab = self._labelArray[count - 1];
 
-                            lastLab.setRect(lastLab.x,(maxHeight-minHeight)*(1-offsetRait),lastLab.width,minHeight+
-                                (maxHeight-minHeight)*offsetRait);
+                            //lastLab.setRect(lastLab.x,(maxHeight-minHeight)*(1-offsetRait),lastLab.width,minHeight+
+                            //    (maxHeight-minHeight)*offsetRait);
+
+                            showingLab.setPosition(cc.p((maxHeight-minHeight)*(1-offsetRait),lastLab.getPosition().y));
+                            showingLab.setContentSize(minHeight+
+                                (maxHeight-minHeight)*offsetRait,lastLab.height);
                         }
 
                         if (count<self._labelArray.length-2){
                             var next2Lab = self._labelArray[count + 2];
-                            next2Lab.setRect(next2Lab.x,(maxHeight-minHeight)*(1-offsetRait),next2Lab.width,minHeight+
-                                (maxHeight-minHeight)*offsetRait);
+                            //next2Lab.setRect(next2Lab.x,(maxHeight-minHeight)*(1-offsetRait),next2Lab.width,minHeight+
+                            //    (maxHeight-minHeight)*offsetRait);
+
+                            showingLab.setPosition(cc.p((maxHeight-minHeight)*(1-offsetRait),next2Lab.getPosition().y));
+                            showingLab.setContentSize(minHeight+
+                                (maxHeight-minHeight)*offsetRait,next2Lab.height);
                         }
 
                         for (var i = 0;i<self._labelArray.length;i++) {
                             if (i!=count && i!=count+1&& i!=count-1 &&i!=count+2) {
                                 var lab = self._labelArray[i];
                                 // lab.setRect()
+                                //lab.setPosition(cc.p((maxHeight-minHeight),lab.y));
+                                //lab.setContentSize(minHeight,lab.height);
+
                             }
                         }
                     // for (int i=0;i<self.SlideLabArr.count;i++) {
