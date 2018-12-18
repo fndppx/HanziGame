@@ -49,7 +49,10 @@
 
         "src/SpellWords/scene/SpellWordsScene.js",
         "src/SpellWords/sprite/ScrollSelector.js",
-        "src/SpellWords/layer/PickerView.js"
+        "src/SpellWords/layer/PickerView.js",
+
+        "src/SpellWords/layer/WordsPickerView.js"
+
 
 
 

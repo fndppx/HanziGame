@@ -43,12 +43,10 @@ var  MouseSprite = cc.Sprite.extend({
 
         //向上移动的回调
         var moveUpCallback = cc.callFunc(function () {
-            // mouse.setTag(1); //刚刚冒出来的时候可以敲地鼠
-            // self.removeFromParent()
+
         }, this);
 
         var  moveDownCallback = cc.callFunc(function () {
-            // mouse.setTag(0); //笑完了之后开始下落了不能敲
             self.removeFromParent()
 
         }, this);
