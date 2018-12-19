@@ -18,30 +18,48 @@ var SpellWordsLayer = cc.Layer.extend({
 
         var size = cc.winSize;
 
-        var items = ['人','朱','前','后','做','哟'];
+        var items = ['做','哟','人','朱','前','后','做','哟','人','朱'];
 
         var listView = new PickerView();
         listView.setDirection(ccui.ScrollView.DIR_VERTICAL);
-        listView.setBounceEnabled(false);
+        listView.setBounceEnabled(true);
         listView.setTouchEnabled(true);
+        // listView.setClippingEnabled(false);
         // listView.setInertiaScrollEnabled(false);
         // listView
         // listView.setSize(cc.size(512, 200));
-        listView.setContentSize(100,10+(40+10)*3);
+        listView.setContentSize(100,(35+10)*3-10);
         listView.x = GC.w_2;
         listView.y = GC.h_2;
+        // listView.
         listView.setAnchorPoint(cc.p(0.5,0.5));
         this.addChild(listView);
+        // listView.setInnerContainerSize(cc.size(100, 10+(40+10)*items.length));
         listView.setInnerContainerSize(cc.size(100, 10+(40+10)*items.length));
+
         this._listView = listView;
         var self = this;
+
+        var topLayer = new cc.LayerColor(cc.color.GRAY);
+        topLayer.x = listView.getPosition().x-50;
+        topLayer.y = listView.getPosition().y+25+(35+10)*1-12;
+        topLayer.setAnchorPoint(0.5,0);
+        topLayer.setContentSize(100,100);
+        // this.addChild(topLayer,2);
+
+        var downLayer = new cc.LayerColor(cc.color.BLACK);
+        downLayer.x = listView.getPosition().x-50;
+        downLayer.y = listView.getPosition().y-100-26-(35+10)*1-2;
+        downLayer.setAnchorPoint(0.5,1);
+        downLayer.setContentSize(100,100);
+
+        // this.addChild(downLayer,2);
+
         listView.addEventListener(function(sender,type){
             switch (type){
                 case ccui.ScrollView.EVENT_SCROLLING:
                 {
-                    // var scrollView = sender;
-                    // var offset = scrollView.getInnerContainerPosition();
-                    // cc.log('offset',offset.y);
+
                 }
 
                     break;
@@ -53,94 +71,66 @@ var SpellWordsLayer = cc.Layer.extend({
                     // (10+(40+10)*items.length)-(10+(40+10)*i)
 
                     var offset_y = scrollView.getInnerContainerSize().height-scrollView.getContentSize().height + offset.y;
-                    var count = Math.floor(offset_y /(40+10));
+                    var count = Math.floor(offset_y /(35+10));
 
-
-                    // if  (count%1 == 0){
-                    //     cc.log('size=====offset=====count',count+1);
-                    //
-                    //     var label = self._labelArray[count+1];
-                    //
-                    //     var actionTo = cc.scaleTo(0., 1.5);
-                    //
-                    //     var actionTo1 = cc.scaleTo(0., 1);
-                    //     if (self._lastLabel){
-                    //         self._lastLabel.runAction(actionTo1);
-                    //
-                    //     }
-                    //
-                    //     label.runAction(actionTo);
-                    //
-                    //     if (self._lastCount != count){
-                    //         self._lastCount = count;
-                    //         self._lastLabel = label;
-                    //     }
-                    // }
-
-                    //CGFloat countOffset = offset-count*(self.lableMid+self.lableWidth);
-                    //return;
-                    var maxHeight = 100;
-                    var minHeight = 50;
-                    var countOffset = offset_y-count*(40+10);
-                    console.log('offsetRait>>>>>>>>>>>offset_y>>>>>',countOffset,offset_y);
-                    //return;
+                    var maxWidth = 40;
+                    var minWidth = 30;
+                    var countOffset = offset_y-count*(35+10);
 
                         var offsetRait = 1;
                         if (countOffset != 0){
-                            offsetRait = 1- countOffset/(40+10);
-
-                            console.log('offsetRait>>>>>>>>>>>',countOffset);
+                            offsetRait = 1- countOffset/(35+10);
                         }
-
 
                         var showingLab = null;
                         if (count >= 0 && count < self._labelArray.length-1){
                             showingLab = self._labelArray[count];
                         }
 
-
                         if (showingLab){
 
-                            showingLab.setPosition(cc.p((maxHeight-minHeight)*(1-offsetRait),showingLab.getPosition().y));
-                            showingLab.setContentSize(minHeight+
-                                (maxHeight-minHeight)*offsetRait,showingLab.height);
-                            //showingLab.setRect(showingLab.x,(maxHeight-minHeight)*(1-offsetRait),showingLab.width,minHeight+
-                            //    (maxHeight-minHeight)*offsetRait);
-
+                            // showingLab.setPosition(cc.p((maxWidth-minWidth)*(1-offsetRait)+20,showingLab.getPosition().y));
+                            showingLab.setContentSize(minWidth+
+                                (maxWidth-minWidth)*offsetRait,showingLab.height);
+                            showingLab.setFontSize(minWidth+
+                                (maxWidth-minWidth)*offsetRait);
 
                         }
 
                         if (count < items.length-1){
                             var nextLab = self._labelArray[count+1];
                             if (nextLab){
-                                //nextLab.setRect(nextLab.x,(maxHeight-minHeight)*(1-offsetRait),nextLab.width,minHeight+
-                                //    (maxHeight-minHeight)*offsetRait);
 
-                                showingLab.setPosition(cc.p((maxHeight-minHeight)*(1-offsetRait),nextLab.getPosition().y));
-                                showingLab.setContentSize(minHeight+
-                                    (maxHeight-minHeight)*offsetRait,nextLab.height);
+                                // nextLab.setPosition(cc.p((maxWidth-minWidth)*offsetRait+20,nextLab.getPosition().y));
+                                // nextLab.setContentSize(minWidth+
+                                //     (maxWidth-minWidth)*(1-offsetRait),nextLab.height);
+                                nextLab.setFontSize(minWidth+
+                                    (maxWidth-minWidth)*(1-offsetRait));
+
                             }
                         }
                         if (count > 0){
 
                             var lastLab = self._labelArray[count - 1];
 
-                            //lastLab.setRect(lastLab.x,(maxHeight-minHeight)*(1-offsetRait),lastLab.width,minHeight+
-                            //    (maxHeight-minHeight)*offsetRait);
+                            // lastLab.x = (maxWidth-minWidth)*(1-offsetRait);
+                            // lastLab.setPosition(cc.p((maxWidth-minWidth)+20,lastLab.getPosition().y));
+                            lastLab.setContentSize(minWidth,lastLab.height);
+                            // lastLab.setFontSize(lastLab.width);
 
-                            showingLab.setPosition(cc.p((maxHeight-minHeight)*(1-offsetRait),lastLab.getPosition().y));
-                            showingLab.setContentSize(minHeight+
-                                (maxHeight-minHeight)*offsetRait,lastLab.height);
+                            lastLab.setFontSize(minWidth);
+
                         }
 
                         if (count<self._labelArray.length-2){
-                            var next2Lab = self._labelArray[count + 2];
-                            //next2Lab.setRect(next2Lab.x,(maxHeight-minHeight)*(1-offsetRait),next2Lab.width,minHeight+
-                            //    (maxHeight-minHeight)*offsetRait);
+                            // var next2Lab = self._labelArray[count + 2];
+                            // // next2Lab.x = (maxWidth-minWidth)*(1-offsetRait);
+                            // next2Lab.setPosition(cc.p((maxWidth-minWidth),lastLab.getPosition().y));
+                            // next2Lab.setContentSize(minWidth,next2Lab.height);
+                            // // next2Lab.setFontSize(next2Lab.width);
+                            //
+                            // next2Lab.setFontSize(minWidth);
 
-                            showingLab.setPosition(cc.p((maxHeight-minHeight)*(1-offsetRait),next2Lab.getPosition().y));
-                            showingLab.setContentSize(minHeight+
-                                (maxHeight-minHeight)*offsetRait,next2Lab.height);
                         }
 
                         for (var i = 0;i<self._labelArray.length;i++) {
@@ -152,20 +142,6 @@ var SpellWordsLayer = cc.Layer.extend({
 
                             }
                         }
-                    // for (int i=0;i<self.SlideLabArr.count;i++) {
-                    // if(i!=count &&
-                    //     i!=count+1&&
-                    //     i!=count-1&&
-                    //     i!=count+2){
-                    //     UILabel *lab = self.SlideLabArr[i];
-                    //     lab.frame = CGRectMake(kViewX(lab),
-                    //         (self.maxHeight-self.minHeight),
-                    //         kViewWidth(lab),
-                    //         self.minHeight);
-                    //     lab.font = [UIFont systemFontOfSize:kViewHeight(lab)];
-                    //     lab.alpha = self.ThirdLevelAlpha;
-                    // }
-                // }
 
                 }
 
@@ -181,18 +157,73 @@ var SpellWordsLayer = cc.Layer.extend({
 
             var label = new cc.LabelTTF(items[i],'Arial', 30);
             label.setAnchorPoint(0.5,0.5);
-            label.setContentSize(100,40);
+            label.setContentSize(100,35);
             label.x = 50;
-            label.y =(10+(40+10)*items.length)-(10+20+(40+10)*i);
+            label.y =(10+(35+10)*items.length)-(10+(35+10)*i);
             // (10+(40+10)*items.length)-
 
             label.color = cc.color.BLACK;
             listView.addChild(label,2);
             this._labelArray.push(label);
+            // cc.log('11111',label.getContentSize().width,label.getContentSize().height);
         }
 
         // cc.log('scrollview>>>>',listView._contentOffset.x);
         // this.scheduleUpdate();
+
+
+        var button = new ccui.Button();
+        button.setTouchEnabled(true);
+        button.setTitleFontSize(20);
+        button.setPressedActionEnabled(true);
+        button.setTitleText("up");
+        button.x = 50;
+        button.y = GC.h-20;
+        var self = this;
+
+        var _count = 3;
+        // self._listView.scrollToPercentVertical(100,0,false);
+
+        button.addTouchEventListener(function(sender,type){
+            // self._listView.scrollTo(cc.p(0, 0), 1, true);
+            if (ccui.Widget.TOUCH_ENDED==type){
+                _count++;
+                if (_count>=items.length){
+                    _count = 0;
+                    self._listView.scrollToPercentVertical(0,0.0,true);
+
+                }else {
+                    self._listView.scrollToPercentVertical((Math.ceil(100/items.length))*_count,1,true);
+
+                }
+            }
+            },this);
+        this.addChild(button,10);
+
+        var button1 = new ccui.Button();
+        button1.setTouchEnabled(true);
+        button1.setTitleFontSize(20);
+        button1.setPressedActionEnabled(true);
+        button1.setTitleText("down");
+        button1.x = 100;
+        button1.y = GC.h-20;
+        button1.addTouchEventListener(function(sender,type){
+            if (ccui.Widget.TOUCH_ENDED==type){
+                _count--;
+                if (_count<=0){
+                    _count = items.length;
+                    self._listView.scrollToPercentVertical(0,0.0,false);
+
+                }else {
+                    self._listView.scrollToPercentVertical(Math.ceil(100/items.length)*_count,1,true);
+
+                }
+
+
+            }
+
+        },this);
+        this.addChild(button1,10);
 
     },
 
