@@ -20,22 +20,64 @@ var SpellWordsLayer = cc.Layer.extend({
 
         var items = ['做','哟','人','朱','前','后','做','哟','人','朱'];
 
+        var list = ["1","2","3","4","5","6","7","8","9","10"];
+        list.reverse();
+        var definition = {
+            size:cc.size(60,125),
+            items:list,
+            backGround: res.back
+        };
+        var node = new ScrollSelector(definition);
+
+        node.x =100;
+        node.y =100 ;
+        this.addChild(node,10);
+        return;
+
+        var nodes = [];
+        for(var i=1; i<=3; i++){
+            // var sprite = new cc.Sprite(res.HelloWorld_png);
+            // nodes.push(sprite);
+
+            var label = new cc.LabelTTF(items[i],'Arial', 30);
+            label.setAnchorPoint(0.5,0.5);
+            label.setContentSize(100,35);
+            // label.x = 50;
+            // label.y =(10+(35+10)*items.length)-(10+(35+10)*i)-17.5;
+            // // label.y =(10+(35+10)*i)+17.5;
+            //
+            // // (10+(40+10)*items.length)-
+            label.color = cc.color.BLACK;
+            nodes.push(label);
+
+            // listView.addChild(label,2);
+            // this._labelArray.push(label);
+        }
+
+        var cycleScroll = new CycleScroll(cc.size(100,150), nodes, nodes[0].getContentSize().height+20);
+        cycleScroll.x = 100;
+        cycleScroll.y = 100;
+        this.addChild(cycleScroll);
+
+        return;
         var listView = new PickerView();
         listView.setDirection(ccui.ScrollView.DIR_VERTICAL);
         listView.setBounceEnabled(true);
         listView.setTouchEnabled(true);
-        // listView.setClippingEnabled(false);
+        listView.setClippingEnabled(false);
         // listView.setInertiaScrollEnabled(false);
         // listView
         // listView.setSize(cc.size(512, 200));
-        listView.setContentSize(100,(35+10)*3-10);
+        // listView.setContentSize(100,(35+10)*3-10);
+        listView.setContentSize(100,45);
+
         listView.x = GC.w_2;
         listView.y = GC.h_2;
         // listView.
         listView.setAnchorPoint(cc.p(0.5,0.5));
         this.addChild(listView);
         // listView.setInnerContainerSize(cc.size(100, 10+(40+10)*items.length));
-        listView.setInnerContainerSize(cc.size(100, 10+(40+10)*items.length));
+        listView.setInnerContainerSize(cc.size(100, 10+(35+10)*items.length));
 
         this._listView = listView;
         var self = this;
@@ -71,6 +113,16 @@ var SpellWordsLayer = cc.Layer.extend({
                     // (10+(40+10)*items.length)-(10+(40+10)*i)
 
                     var offset_y = scrollView.getInnerContainerSize().height-scrollView.getContentSize().height + offset.y;
+
+                    console.log('offset_y>>>>>',offset_y);
+
+                    if (offset_y<0){
+                    }else {
+
+                    }
+
+                    // return;
+
                     var count = Math.floor(offset_y /(35+10));
 
                     var maxWidth = 40;
@@ -159,7 +211,9 @@ var SpellWordsLayer = cc.Layer.extend({
             label.setAnchorPoint(0.5,0.5);
             label.setContentSize(100,35);
             label.x = 50;
-            label.y =(10+(35+10)*items.length)-(10+(35+10)*i);
+            label.y =(10+(35+10)*items.length)-(10+(35+10)*i)-17.5;
+            // label.y =(10+(35+10)*i)+17.5;
+
             // (10+(40+10)*items.length)-
 
             label.color = cc.color.BLACK;
