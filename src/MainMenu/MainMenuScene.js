@@ -69,6 +69,8 @@ var MainMenuLayer = cc.Layer.extend({
                 title:"语音评测",
                 testScene:function () {
                     // cc.director.runScene(new cc.TransitionFade(0.3, new WriteHanziScene()));
+                    var ret = jsb.reflection.callStaticMethod("JSBManager",
+                        "gotoXunFeiISE");
                 }
             },
             {

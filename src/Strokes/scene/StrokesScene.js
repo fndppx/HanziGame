@@ -22,7 +22,11 @@ var StrokesLayer = cc.Layer.extend({
     _currentIndex:0,
     //轮廓的drawNode
     _pathDrawNode:null,
+    //笔顺的drawNode
     _strokeDrawNode:null,
+
+    _pathClippingDrawNode:null,
+
 
     _timer_status:0,
 
@@ -31,6 +35,7 @@ var StrokesLayer = cc.Layer.extend({
     _moveSprite:null,
     _selectIndex:0,
 
+    _clipping:null,
 
     ctor:function(){
         this._super();
@@ -48,13 +53,34 @@ var StrokesLayer = cc.Layer.extend({
 
         // cc.director.setClearColor(cc.color.WHITE);
 
+        // ClippingNode *clipping = ClippingNode::create();
+        // clipping->setStencil( shape );  //遮罩的形状
+        // clipping->setInverted( true );  //为真 遮罩下什么都不显示, 为假 只有在遮罩下才显示东西.
+        // clipping->addChild(sprite, 1);  //只有在clipping节点下的东西才有遮罩效果
+        //
+
+
+
+
+
         //轮廓绘图node
         this._pathDrawNode = new cc.DrawNode();
+
         this.addChild(this._pathDrawNode);
 
+        // this._pathClippingDrawNode = new cc.DrawNode();
 
         this._strokeDrawNode = new cc.DrawNode();
         this.addChild(this._strokeDrawNode,9);
+
+        // this._clipping = new cc.ClippingNode();
+        // this._clipping.stencil = this._pathClippingDrawNode;
+        // this._clipping.setInverted(false);
+        // // this._clipping.setInterval(0);
+        // this.addChild(this._clipping,20);
+        //
+        // this._clipping.addChild(this._strokeDrawNode);
+
 
         //graphics
         var graphicsDictionary = [];
@@ -93,6 +119,7 @@ var StrokesLayer = cc.Layer.extend({
                 that._outlineDictionary = JSON.parse(data);
 
                 that.layoutHanzi();
+
 
                 that.makeMedian(0);
 
@@ -234,6 +261,12 @@ var StrokesLayer = cc.Layer.extend({
         this._currentIndex = 0;
         // this.makeMedian(this._currentIndex);
 
+            // this._clipping.setInverted(true);
+        //     this._clipping.addChild(this._strokeDrawNode);
+        // this.addChild(this._clipping);
+     // }
+
+
         this.startTimer();
 
 
@@ -262,6 +295,7 @@ var StrokesLayer = cc.Layer.extend({
                 var y = cc.winSize.height-finalPathArray[counter+2]*ratio;
 
                 this._pathDrawNode.drawDot(cc.p(x,offset -y),lineWidth,_pathDrawColor);
+                // this._pathClippingDrawNode.drawDot(cc.p(x,offset -y),lineWidth,_pathDrawColor);
                 lastPos = cc.p(x,offset-y);
                 counter += 3;
 
@@ -273,6 +307,8 @@ var StrokesLayer = cc.Layer.extend({
                 var y2 = cc.winSize.height - finalPathArray[counter+4]*ratio;
 
                 this._pathDrawNode.drawQuadBezier(lastPos, cc.p(x1,offset-y1), cc.p(x2,offset-y2), 50, lineWidth, _pathDrawColor);
+                // this._pathClippingDrawNode.drawQuadBezier(lastPos, cc.p(x1,offset-y1), cc.p(x2,offset-y2), 50, lineWidth, _pathDrawColor);
+
                 lastPos = cc.p(x2,offset-y2);
                 counter += 5;
             }
@@ -280,7 +316,9 @@ var StrokesLayer = cc.Layer.extend({
                 var x = finalPathArray[counter+1]*ratio+_Offset_x;
                 var y =cc.winSize.height- finalPathArray[counter+2]*ratio;
 
-                this._pathDrawNode.drawSegment(lastPos,cc.p(x,offset-y),1,_pathDrawColor);
+                this._pathDrawNode.drawSegment(lastPos,cc.p(x,offset-y),lineWidth,_pathDrawColor);
+                // this._pathClippingDrawNode.drawSegment(lastPos,cc.p(x,offset-y),lineWidth,_pathDrawColor);
+
                 counter += 3;
             }
             if (token == "Z"){
@@ -323,9 +361,12 @@ var StrokesLayer = cc.Layer.extend({
 
         if (this._moveSprite==null){
             var moveSprite =  new StrokeMoveSprite(res.HelloWorld_png);
+            moveSprite.setVisible(false);
+            // moveSprite.setAlpha(0);
             this._moveSprite = moveSprite;
             this.addChild(moveSprite,10);
         }
+        this._moveSprite.setVisible(false);
 
         var animationArray = [];
         // lineWidth = _current_stroke_width * ratio;
@@ -369,7 +410,7 @@ var StrokesLayer = cc.Layer.extend({
         var that = this;
         this._moveSprite.callbackBlk(function(dt){
 
-            that._strokeDrawNode.drawDot(cc.p(dt.x+32,dt.y+32),1,cc.color.BLUE);
+            that._strokeDrawNode.drawDot(cc.p(dt.x+32,dt.y+32),10,cc.color.BLUE);
 
         });
         animationArray.push(cc.callFunc(callback,this,1));

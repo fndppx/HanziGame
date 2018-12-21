@@ -4,6 +4,8 @@ var StrokeMoveSprite = cc.Sprite.extend({
     ctor:function (aTexture) {
 
         this._super(aTexture);
+
+
         this._rect = cc.rect(0, 0, this.getContentSize().width, this.getContentSize().height);
         this.scheduleUpdate();
     },

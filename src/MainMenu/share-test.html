@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>口语交际：听故事，讲故事</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@1.2/dist/hanzi-writer.min.js"></script>
+
+</head>
+<body>
+
+      <div id="docs-target-3" class="inline-demo"></div>
+      <button class="btn btn-primary inline-demo-btn" id="docs-target-3-button" type="submit">笔顺</button>
+      <script>
+          (function() {
+            var writer = HanziWriter.create('docs-target-3', '天', {
+              width: 400,
+              height: 400,
+              padding: 5,
+              showOutline: true
+
+            });
+            document.getElementById('docs-target-3-button').addEventListener('click', function() {
+              writer.animateCharacter();
+            });
+          })();
+      </script>
+</body>
+</html>
