@@ -146,7 +146,7 @@ var WriteHanziLayer = cc.Layer.extend({
         button.y = GC.h-80;
         button.addTouchEventListener(function(){
             // cc.Director.popScene();
-            cc.director.runScene(new cc.TransitionFade(1.2, new MainMenuScene()));
+            cc.director.runScene(new cc.TransitionFade(0.3, new MainMenuScene()));
 
         },this);
         this.addChild(button);

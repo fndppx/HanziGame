@@ -25,9 +25,12 @@ var ScrollSelector = ccui.Layout.extend({
     _bBeginCountTime:false,
 
     _fontColor: cc.color.BLACK,
-    _fontSize: 14,
+    _fontSize: 22,
     _fontname: "Arial",
     // _mode:null,             //游戏类型：选择器，游戏器
+
+
+    _didSelectTextBlk:null,
 
     ctor: function (params) { //params 参数列表： items, textures.back, size
         this._super();
@@ -105,6 +108,7 @@ var ScrollSelector = ccui.Layout.extend({
         target._bMoveing = false;
         if (target._contentNode.isRunning()){
             // target._contentNode.stopAction(target._runningAction);
+            target._contentNode.stopAllActions();
 
         }
         // 开启滑动计时
@@ -123,24 +127,6 @@ var ScrollSelector = ccui.Layout.extend({
         target._diffYCount = target._diffYCount + diffY;
         target._onceDiffYCount = target._onceDiffYCount + diffY;
 
-        // target._contentNode.setFontSize(diffY*14);
-
-        var num = Math.round(target._contentNode.y/target._list[0].height);
-        var num2 = -1 * (num % target._list.length);
-        if (num2 > 0){
-            target._currentItemIndex = num2 + 2;
-        }else if (num2 < 0){
-            target._currentItemIndex = target._list.length + num2 + 2;
-
-        }else{
-            target._currentItemIndex = 2;
-        }
-        if (target._currentItemIndex > target._list.length){
-            target._currentItemIndex = target._currentItemIndex % target._list.length;
-        }
-        // this._value = this._originList[this._currentItemIndex-1].getString();
-        // target._originList[target._currentItemIndex-1].setFontSize(diffY*14);
-        cc.log('diffy',diffY);
     },
 
     _onTouchEnded:function (touch, event) {
@@ -151,6 +137,7 @@ var ScrollSelector = ccui.Layout.extend({
         if (/*Math.abs(target._onceDiffYCount) > target._distanceCondition &&*/ target._timeCount < target._timeCondition) {
             if (target._contentNode.isRunning())  {
                 // target._contentNode.stopAction(target._runningAction);
+                target._contentNode.stopAllActions();
 
             }
             var distance = Math.round(target._onceDiffYCount*target._velocity);
@@ -220,7 +207,14 @@ var ScrollSelector = ccui.Layout.extend({
         }
         this._value = this._originList[this._currentItemIndex-1].getString();
         // this._originList[this._currentItemIndex-1].setFontSize(20);
+        if (this._didSelectTextBlk){
+            this._didSelectTextBlk(this._value);
+        }
         cc.log(this._value);
-    }
+    },
+
+    _didSelectTextBlk:function(callback){
+        this._didSelectTextBlk = callback;
+    },
 
 });

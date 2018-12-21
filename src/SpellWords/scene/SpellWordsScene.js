@@ -5,6 +5,11 @@ var SpellWordsLayer = cc.Layer.extend({
     _lastLabel:null,
     _lastCount:-1,
 
+    _node1Text:null,
+    _node2Text:null,
+    _node3Text:null,
+
+
     ctor:function() {
         this._super();
 
@@ -18,9 +23,9 @@ var SpellWordsLayer = cc.Layer.extend({
 
         var size = cc.winSize;
 
-        var items = ['做','哟','人','朱','前','后','做','哟','人','朱'];
+        var list = ['做','哟','人','朱','前','后','做','哟','人','朱','诸'];
 
-        var list = ["1","2","3","4","5","6","7","8","9","10"];
+        // var list = ["1","2","3","4","5","6","7","8","9","10"];
         list.reverse();
         var definition = {
             size:cc.size(60,125),
@@ -28,10 +33,68 @@ var SpellWordsLayer = cc.Layer.extend({
             backGround: res.back
         };
         var node = new ScrollSelector(definition);
-
+        var self = this;
+         node._didSelectTextBlk(function(value){
+            self._node1Text = value;
+            self.didSelectCompleted();
+         })
         node.x =100;
         node.y =100 ;
         this.addChild(node,10);
+
+        var list1 = ['做','哟','人','朱','前','后','做','哟','人','朱','葛'];
+
+        // var list = ["1","2","3","4","5","6","7","8","9","10"];
+        list1.reverse();
+        var definition = {
+            size:cc.size(60,125),
+            items:list1,
+            backGround: res.back
+        };
+        var node1 = new ScrollSelector(definition);
+        node1._didSelectTextBlk(function(value){
+            self._node2Text = value;
+            self.didSelectCompleted();
+
+        })
+        node1.x =160;
+        node1.y =100 ;
+        this.addChild(node1,10);
+
+        var list2 = ['做','哟','人','朱','前','后','做','哟','人','朱','亮'];
+
+        // var list = ["1","2","3","4","5","6","7","8","9","10"];
+        list2.reverse();
+        var definition = {
+            size:cc.size(60,125),
+            items:list2,
+            backGround: res.back
+        };
+        var node2 = new ScrollSelector(definition);
+        node2._didSelectTextBlk(function(value){
+            self._node3Text = value;
+            self.didSelectCompleted();
+
+        })
+        node2.x =220;
+        node2.y =100 ;
+        this.addChild(node2,10);
+
+        var button = new ccui.Button();
+        button.setTouchEnabled(true);
+        button.setTitleFontSize(20);
+        button.setPressedActionEnabled(true);
+        button.setTitleText("Back");
+        button.x = 50;
+        button.y = GC.h-20;
+        var self = this;
+        button.addTouchEventListener(function(){
+            cc.director.runScene(new cc.TransitionFade(0.3, new MainMenuScene()));
+
+
+        },this);
+        this.addChild(button,10);
+
         return;
 
         var nodes = [];
@@ -272,8 +335,6 @@ var SpellWordsLayer = cc.Layer.extend({
                     self._listView.scrollToPercentVertical(Math.ceil(100/items.length)*_count,1,true);
 
                 }
-
-
             }
 
         },this);
@@ -281,9 +342,33 @@ var SpellWordsLayer = cc.Layer.extend({
 
     },
 
+    didSelectCompleted:function(){
+        var text1 = this._node1Text;
+        var text2 = this._node2Text;
+        var text3 = this._node3Text;
+
+        if (text1 == '诸'&&text2 == '葛'&&text3 == '亮'){
+            var alert =  new HitMouseAlert();
+            alert.createSuccessAlert();
+            alert.attr({
+                x: (GC.w-200)/2,
+                y: (GC.h-100)/2,
+            });
+            alert.setContentSize(200,100);
+
+            this.addChild(alert,13);
+            setTimeout(function(){
+                alert.removeFromParent();
+            }, 1000);
+        }
+
+    },
+
     update:function(dt){
         // cc.log(this._listView._contentOffset.y);
     },
+
+
 });
 
 var SpellWordsScene = cc.Scene.extend({

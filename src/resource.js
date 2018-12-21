@@ -39,6 +39,7 @@ var res = {
     train_header:"res/JointTrain/trainHeader.png",
     train_carriage:"res/JointTrain/train_carriage.png",
     flower_basket:"res/FlowerBasket/basket.png",
+    button_bg:"res/button.png",
 
 
 
