@@ -10,8 +10,6 @@ var  _current_stroke_width = 0;
 var  _current_stroke_length = 0;
 var  _current_stroke = 0;
 
-
-
 var StrokesLayer = cc.Layer.extend({
     _dataArray:null,
     //存放文字的字典
@@ -39,7 +37,101 @@ var StrokesLayer = cc.Layer.extend({
 
     ctor:function(){
         this._super();
+        var self = this;
 
+        // cc.director.setClearColor(cc.color.WHITE);
+
+        // ClippingNode *clipping = ClippingNode::create();
+        // clipping->setStencil( shape );  //遮罩的形状
+        // clipping->setInverted( true );  //为真 遮罩下什么都不显示, 为假 只有在遮罩下才显示东西.
+        // clipping->addChild(sprite, 1);  //只有在clipping节点下的东西才有遮罩效果
+
+        var layer = new cc.LayerColor(cc.color(123,204,204,255));
+        layer.x = 0;
+        layer.y = 0;
+        layer.setAnchorPoint(0,0);
+        this.addChild(layer);
+        // var bgLayer = new DrawBgLayer();
+        // this.addChild(bgLayer);
+
+        var webView = new WebViewStrokesLayer();
+        // webView.setTouchEnabled(false);
+        webView.x = GC.w_2;
+        webView.y = GC.h_2;
+        webView.setAnchorPoint(0.5,0.5);
+        webView.setContentSize(200,200);
+
+        this.addChild(webView,11);
+
+        // var layer1 = new cc.LayerColor(cc.color.RED);
+        // layer1.setAnchorPoint(0,0);
+        // layer1.setContentSize(200,200);
+        // layer1.x = 0;
+        // layer1.y = 0;
+        //
+        // webView.addChild(layer1,20);
+
+        var button = new ccui.Button();
+        button.setTouchEnabled(true);
+        button.setTitleFontSize(20);
+        button.setPressedActionEnabled(true);
+        button.setTitleText("Back");
+        button.x = 50;
+        button.y = GC.h - 80;
+        button.addTouchEventListener(function(sender,type){
+            if (ccui.Widget.TOUCH_ENDED == type){
+                webView.gotoBack();
+                cc.director.runScene(new cc.TransitionFade(0.3, new MainMenuScene()));
+            }
+
+        },this);
+        this.addChild(button);
+
+        var button1 = new ccui.Button();
+        button1.setTouchEnabled(true);
+        button1.setTitleFontSize(20);
+        button1.setPressedActionEnabled(true);
+        button1.setTitleText("下一字");
+        button1.x = 500;
+        button1.y = GC.h-80;
+
+        var count = 1;
+        button1.addTouchEventListener(function(sender,type){
+            // var code = "alert('evaluateJS!')";
+            // this._webView.evaluateJS(code);
+
+            if (ccui.Widget.TOUCH_ENDED == type){
+                var string = hanziArr[count];
+
+                webView.selectText(string);
+
+                count ++;
+                if (count >= hanziArr.length){
+                    count = 0;
+                }
+            }
+
+        },this);
+        this.addChild(button1);
+
+        var button2 = new ccui.Button();
+        button2.setTouchEnabled(true);
+        button2.setTitleFontSize(20);
+        button2.setPressedActionEnabled(true);
+        button2.setTitleText("笔顺");
+        button2.x = 500;
+        button2.y = GC.h-80-100;
+
+        button2.addTouchEventListener(function(sender,type){
+
+            if (ccui.Widget.TOUCH_ENDED == type){
+
+                webView.showStrokes();
+            }
+
+        },this);
+        this.addChild(button2);
+        return;
 
         var moveSprite =  new StrokeMoveSprite(res.HelloWorld_png);
 
@@ -49,19 +141,6 @@ var StrokesLayer = cc.Layer.extend({
 
         var bgLayer = new DrawBgLayer();
         this.addChild(bgLayer);
-
-
-        // cc.director.setClearColor(cc.color.WHITE);
-
-        // ClippingNode *clipping = ClippingNode::create();
-        // clipping->setStencil( shape );  //遮罩的形状
-        // clipping->setInverted( true );  //为真 遮罩下什么都不显示, 为假 只有在遮罩下才显示东西.
-        // clipping->addChild(sprite, 1);  //只有在clipping节点下的东西才有遮罩效果
-        //
-
-
-
-
 
         //轮廓绘图node
         this._pathDrawNode = new cc.DrawNode();
@@ -80,7 +159,6 @@ var StrokesLayer = cc.Layer.extend({
         // this.addChild(this._clipping,20);
         //
         // this._clipping.addChild(this._strokeDrawNode);
-
 
         //graphics
         var graphicsDictionary = [];
@@ -120,13 +198,11 @@ var StrokesLayer = cc.Layer.extend({
 
                 that.layoutHanzi();
 
-
                 that.makeMedian(0);
 
             }
 
         });
-
 
         this._currentButton = new ccui.Button();
         this._currentButton.setTouchEnabled(true);
@@ -155,7 +231,6 @@ var StrokesLayer = cc.Layer.extend({
 
                 case ccui.Widget.TOUCH_ENDED:
                     sender.setBright(true);
-
 
                     cc.removeSelf();
 
@@ -197,13 +272,8 @@ var StrokesLayer = cc.Layer.extend({
 
             }
 
-
             // // cc.Director.popScene();
             // that._buttonIsSelected = !that._buttonIsSelected;
-
-
-
-
 
 
         },this);
@@ -266,9 +336,7 @@ var StrokesLayer = cc.Layer.extend({
         // this.addChild(this._clipping);
      // }
 
-
         this.startTimer();
-
 
     },
 
@@ -393,8 +461,6 @@ var StrokesLayer = cc.Layer.extend({
 
         }
 
-
-
         // var drawN = new cc.DrawNode();
         // this.addChild(drawN,20);
 
@@ -452,7 +518,6 @@ var StrokesLayer = cc.Layer.extend({
 
     },
 
-
     drawRect:function(){
         if (_current_stroke < this.getStrokeCount()) {
             this.makeMedian(_current_stroke);
@@ -491,7 +556,6 @@ var StrokesLayer = cc.Layer.extend({
         _current_stroke_width = 0.0;
 
     },
-
 
     strokeBegan:function(){
         // _current_stroke_length = [self getStrokeLength:_current_stroke];
@@ -544,7 +608,6 @@ var StrokesLayer = cc.Layer.extend({
                     this.strokeEnded();
 
                 }
-
 
                 // ...
                 break;

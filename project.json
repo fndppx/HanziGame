@@ -53,7 +53,17 @@
 
         "src/SpellWords/layer/WordsPickerView.js",
 
-        "src/SpellWords/layer/CycleScroll.js"
+        "src/SpellWords/layer/CycleScroll.js",
+
+
+        "src/Strokes/layer/WebViewStrokesLayer.js",
+
+
+        "src/FindWordInImage/scene/FindWordInImgScene.js"
+
+
+
+
 
 
 

@@ -70,7 +70,6 @@ var HitMouseBgLayer = cc.Layer.extend({
             label.setString(__count);
         },1);
 
-
     },
 
     createMouse:function(){
@@ -210,7 +209,6 @@ var HitMouseBgLayer = cc.Layer.extend({
 
                             self.unscheduleAllCallbacks();
                         }
-
 
                     }else {
                         cc.log('打错了');

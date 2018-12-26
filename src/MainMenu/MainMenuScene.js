@@ -1,7 +1,6 @@
 
 var MainMenuLayer = cc.Layer.extend({
 
-
     _backgroundLayer : null,
     _touchLayer      : null,
     listView :null,
@@ -48,7 +47,7 @@ var MainMenuLayer = cc.Layer.extend({
 
         var item8 = new cc.MenuItemFont("图片与勾勒", function(){
 
-            cc.director.runScene(new cc.TransitionFade(0.3, new SpellWordsScene()));
+            cc.director.runScene(new cc.TransitionFade(0.3, new FindWordImgScene()));
 
         }, this);
 
@@ -106,9 +105,10 @@ var MainMenuLayer = cc.Layer.extend({
             {
                 title:"图片与勾勒",
                 testScene:function () {
+                    cc.director.runScene(new cc.TransitionFade(0.3, new FindWordImgScene()));
+
                 }
             },
-
 
         ];
         this._dataSource = dataSource;
