@@ -113,7 +113,6 @@ var FindWordImgLayer = cc.LayerColor.extend({
                     }, 1000);
                 }
 
-
                 cc.log('onTouchBegan====');
                 return true;
             },
@@ -144,7 +143,6 @@ var FindWordImgLayer = cc.LayerColor.extend({
         this._super();
         cc.log("A-onExit");
         // cc.director.popScene();
-
 
     },
 

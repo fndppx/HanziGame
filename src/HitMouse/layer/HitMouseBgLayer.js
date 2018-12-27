@@ -11,6 +11,7 @@ var HitMouseBgLayer = cc.Layer.extend({
 
         this._super();
 
+        __count = 30;
         this.initBackground();
 
         var draw =  new cc.DrawNode();

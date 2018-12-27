@@ -5,6 +5,8 @@ var FlowersBasketLayer = cc.Layer.extend({
     _flowersBasketSpriteArray:null,
     _totalCount:0,
 
+
+    _layout:null,
     ctor:function() {
         this._super();
         var layer = new cc.LayerColor(cc.color(123,204,204,255));
@@ -28,6 +30,50 @@ var FlowersBasketLayer = cc.Layer.extend({
         },this);
         this.addChild(button);
 
+        this.layout = this.createLayout();
+
+        var layoutRect = this.layout.getContentSize();
+        this.layout.setBackGroundColorType(ccui.Layout.BG_COLOR_SOLID);
+        this.layout.setBackGroundColor(cc.color.RED);
+
+        // var backgroundRect = background.getContentSize();
+        this.layout.x = 100;
+        this.layout.y = 100;
+        this.addChild(this.layout);
+
+
+        var text = new ccui.Text("ajkdaf", "Marker Felt", 20);
+        // text.attr({
+        //         //     string: "adkfha",
+        //         //     font: "30px AmericanTypewriter",
+        //         //     // x: this._widget.width / 2,
+        //         //     // y: this._widget.height / 2 + text.height / 4
+        //         // });
+        text.setString("text11231");
+        // text.setFontSize(30);
+        this.layout.addChild(text);
+
+        var text1 = new ccui.LabelTTF("ajkdaf", "Marker Felt", 20);
+        text1.setString("text2");
+
+        this.layout.addChild(text1);
+
+        var lp1 = new ccui.LinearLayoutParameter();
+        text.setLayoutParameter(lp1);
+        lp1.setGravity(ccui.LinearLayoutParameter.LEFT);
+        lp1.setMargin(new ccui.Margin(0, 10, 10, 10));
+
+
+        var lp2 = new ccui.LinearLayoutParameter();
+        text1.setLayoutParameter(lp2);
+        lp2.setGravity(ccui.LinearLayoutParameter.LEFT);
+        lp2.setMargin(new ccui.Margin(10, 10, 0, 10));
+
+
+
+
+
+        return;
         // this._flowersBasketArray = ['科目','时间','人称'];
 
         this._flowersBasketArray = [{'type':'0','name':'科目'},{'type':'1','name':'时间'},{'type':'2','name':'人称'}];
@@ -122,7 +168,15 @@ var FlowersBasketLayer = cc.Layer.extend({
             });
         }
 
-    }
+    },
+
+    createLayout: function () {
+        var layout = new ccui.Layout();
+        layout.setLayoutType(ccui.Layout.LINEAR_HORIZONTAL);
+        layout.setClippingEnabled(true);
+        layout.setContentSize(cc.size(100, 150));
+        return layout;
+    },
 });
 
 var FlowersBasketScene = cc.Scene.extend({

@@ -8,7 +8,7 @@ var _lastPoint = null;
 
 
 var _Offset_y = -100;
-var _Offset_x = 100;
+var _Offset_x = 0;
 
 var WriteHanziLayer = cc.Layer.extend({
     _bgGroundLayer:null,
@@ -73,7 +73,6 @@ var WriteHanziLayer = cc.Layer.extend({
                 }
                 // 天，蒙，瓣，棚，靠，固，烂，界，易，精，愿，鑫，邋
                 cc.log("keyword>>>>>",   graphics_dictionary["大"]);
-
 
                 var index = graphics_dictionary[hanziArr[0]];
 
@@ -258,8 +257,6 @@ var WriteHanziLayer = cc.Layer.extend({
                 if (s(point2,that.middleP)<=w){
                     cc.log("在里边");
 
-
-
                     if (_lastPoint == null) {
                         currentDrawDode.drawDot(cc.p(point2.x,point2.y),lineWidth,cc.color.WHITE);
 
@@ -411,7 +408,7 @@ var WriteHanziLayer = cc.Layer.extend({
         // cc.log("offset",offset);
         var lastPos = cc.p;
 
-        let lineWidth = 2;
+        let lineWidth = 1;
 
         // this.addChild(m_drawNode);
         // cc.log(finalPathArray.length);
@@ -422,7 +419,7 @@ var WriteHanziLayer = cc.Layer.extend({
                 var y = cc.winSize.height-finalPathArray[counter+2]*ratio;
 
                 // cc.log("y>>>>>>",x,y,finalPathArray[counter+2]*ratio);
-                this.m_drawNode.drawDot(cc.p(x,offset -y),lineWidth,cc.color.RED);
+                this.m_drawNode.drawDot(cc.p(x,offset -y),0.5,cc.color.RED);
                 lastPos = cc.p(x,offset-y);
                 counter += 3;
 
@@ -441,7 +438,9 @@ var WriteHanziLayer = cc.Layer.extend({
                 var x = finalPathArray[counter+1]*ratio+_Offset_x;
                 var y =cc.winSize.height- finalPathArray[counter+2]*ratio;
 
-                this.m_drawNode.drawSegment(lastPos,cc.p(x,offset-y),1,cc.color.RED);
+                this.m_drawNode.drawSegment(lastPos,cc.p(x,offset-y),0.5,cc.color.RED);
+                lastPos = cc.p(x,offset-y);
+
                 counter += 3;
             }
             if (token == "Z"){

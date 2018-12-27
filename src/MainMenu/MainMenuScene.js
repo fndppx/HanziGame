@@ -6,7 +6,7 @@ var MainMenuLayer = cc.Layer.extend({
     listView :null,
     _spawnCount:8,
     _array:[],
-    _totalCount: 100,
+    _totalCount: 8,
     _dataSource:[],
     ctor : function(){
 
