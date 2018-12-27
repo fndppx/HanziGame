@@ -75,8 +75,6 @@ var JointTrainLayer = cc.Layer.extend({
            this.addChild(train,10);
        }
 
-
-
        // var gapWidth = 10;
        //
        // // 70  38?
@@ -101,13 +99,11 @@ var JointTrainLayer = cc.Layer.extend({
        button.addTouchEventListener(function(){
            cc.director.runScene(new cc.TransitionFade(0.3, new MainMenuScene()));
 
-
        },this);
        this.addChild(button,10);
 
    }
 });
-
 
 var JointTrainScene = cc.Scene.extend({
 

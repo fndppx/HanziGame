@@ -1,9 +1,9 @@
 
 var _outlineDictionary = [];
-var currentDrawDode = null;
-var currentDrawDodeArr = [];
-var graphics_dictionary = [];
-var hanziArr = ["天","蒙","辫","棚","靠","固","烂","界","易","精","愿","鑫","邋"];
+var _currentDrawDode = null;
+var _currentDrawDodeArr = [];
+var _graphics_dictionary = [];
+var _hanziArr = ["天","蒙","辫","棚","靠","固","烂","界","易","精","愿","鑫","邋"];
 var _lastPoint = null;
 
 
@@ -12,14 +12,14 @@ var _Offset_x = 0;
 
 var WriteHanziLayer = cc.Layer.extend({
     _bgGroundLayer:null,
-    moveSprites:null,
+    _moveSprites:null,
     _lineWidth:10,
     _currentIndex:0,
     _totalstrokes:0,
     _dataArray:null,
     _medians:null,
     _selectIndex:0,
-    m_drawNode:null,
+    _m_drawNode:null,
     ctor:function(){
         this._super();
 
@@ -27,7 +27,7 @@ var WriteHanziLayer = cc.Layer.extend({
         this._dataArray = [];
         var that = this;
 
-        this.moveSprites = [];
+        this._moveSprites = [];
 
         // add bg
         this._bgGroundLayer = new DrawBgLayer();
@@ -47,8 +47,8 @@ var WriteHanziLayer = cc.Layer.extend({
         cc.log(ss);
 
         var graphics_dictionary = [];
-        this.m_drawNode = new cc.DrawNode();
-        this.addChild(this.m_drawNode);
+        this._m_drawNode = new cc.DrawNode();
+        this.addChild(this._m_drawNode);
 
         cc.loader.loadTxt(aREx, function(err, data){
             if(err) return console.log("load failed");
@@ -74,7 +74,7 @@ var WriteHanziLayer = cc.Layer.extend({
                 // 天，蒙，瓣，棚，靠，固，烂，界，易，精，愿，鑫，邋
                 cc.log("keyword>>>>>",   graphics_dictionary["大"]);
 
-                var index = graphics_dictionary[hanziArr[0]];
+                var index = graphics_dictionary[_hanziArr[0]];
 
                 var data = that._dataArray[index];
                 _outlineDictionary = JSON.parse(data);
@@ -89,28 +89,28 @@ var WriteHanziLayer = cc.Layer.extend({
         var item1 = new cc.MenuItemFont("下一字", function(){
             console.log("menu is clicked");
 
-            for (var i = 0;i<this.moveSprites.length;i++){
-                let a = this.moveSprites[i];
+            for (var i = 0;i<this._moveSprites.length;i++){
+                let a = this._moveSprites[i];
                 a.removeFromParent();
 
             }
-            this.moveSprites.splice(0,this.moveSprites.length);
+            this._moveSprites.splice(0,this._moveSprites.length);
 
-            for (var i = 0;i<currentDrawDodeArr.length;i++){
-                var b  = currentDrawDodeArr[i];
+            for (var i = 0;i<_currentDrawDodeArr.length;i++){
+                var b  = _currentDrawDodeArr[i];
                 b.removeFromParent();
             }
-            currentDrawDodeArr = [];
+            _currentDrawDodeArr = [];
 
-            that.m_drawNode.clear();
+            that._m_drawNode.clear();
             that._currentIndex = 0;
 
             that._selectIndex++;
-            if (that._selectIndex >hanziArr.length-1){
+            if (that._selectIndex >_hanziArr.length-1){
                 that._selectIndex = 0;
             }
 
-            var index = graphics_dictionary[hanziArr[that._selectIndex]];
+            var index = _graphics_dictionary[_hanziArr[that._selectIndex]];
 
             var data = that._dataArray[index];
             _outlineDictionary = JSON.parse(data);
@@ -232,8 +232,8 @@ var WriteHanziLayer = cc.Layer.extend({
                 //
                 // that.addChild(drawNode,20);
 
-                var sprite1 = that.moveSprites[1];
-                var sprite = that.moveSprites[0];
+                var sprite1 = that._moveSprites[1];
+                var sprite = that._moveSprites[0];
 
                 var center = null;
 
@@ -258,11 +258,11 @@ var WriteHanziLayer = cc.Layer.extend({
                     cc.log("在里边");
 
                     if (_lastPoint == null) {
-                        currentDrawDode.drawDot(cc.p(point2.x,point2.y),lineWidth,cc.color.WHITE);
+                        _currentDrawDode.drawDot(cc.p(point2.x,point2.y),lineWidth,cc.color.WHITE);
 
                     }else {
 
-                        currentDrawDode.drawSegment(_lastPoint,cc.p(point2.x,point2.y),lineWidth,cc.color.WHITE);
+                        _currentDrawDode.drawSegment(_lastPoint,cc.p(point2.x,point2.y),lineWidth,cc.color.WHITE);
                     }
 
                     _lastPoint = cc.p(point2.x,point2.y);
@@ -282,10 +282,10 @@ var WriteHanziLayer = cc.Layer.extend({
 
                     sprite.setEnableMoved(true);
 
-                    currentDrawDode.clear();
+                    _currentDrawDode.clear();
                 }
 
-                if (that.moveSprites.length==0){
+                if (that._moveSprites.length==0){
                     return;
                 }
 
@@ -301,17 +301,17 @@ var WriteHanziLayer = cc.Layer.extend({
 
                     sprite1.removeFromParent();
 
-                    if (that.moveSprites.length==2){
+                    if (that._moveSprites.length==2){
                         _lastPoint = null;
-                        currentDrawDode.drawSegment(cc.p(point2.x,point2.y),cc.p(point1.x,point1.y),lineWidth,cc.color.WHITE);
+                        _currentDrawDode.drawSegment(cc.p(point2.x,point2.y),cc.p(point1.x,point1.y),lineWidth,cc.color.WHITE);
 
-                        for (var i = 0;i<that.moveSprites.length;i++){
-                            let a = that.moveSprites[i];
+                        for (var i = 0;i<that._moveSprites.length;i++){
+                            let a = that._moveSprites[i];
                             // a.removeFromParent();
 
                         }
                         sprite.removeFromParent();
-                        that.moveSprites.splice(0,that.moveSprites.length);
+                        that._moveSprites.splice(0,that._moveSprites.length);
                         that._currentIndex++;
                         if (that._currentIndex>=that._totalstrokes){
 
@@ -321,7 +321,7 @@ var WriteHanziLayer = cc.Layer.extend({
                         that.makeMedian(that._currentIndex);
 
                     }else {
-                        that.moveSprites.splice(1,1);
+                        that._moveSprites.splice(1,1);
                         that.resetStatus();
                     }
                 }
@@ -342,7 +342,7 @@ var WriteHanziLayer = cc.Layer.extend({
             });
 
             this.addChild(sushi,11);
-            this.moveSprites.push(sushi);
+            this._moveSprites.push(sushi);
 
         }
 
@@ -351,17 +351,17 @@ var WriteHanziLayer = cc.Layer.extend({
 
     resetStatus:function(){
 
-        var nextSprite = this.moveSprites[1];
-        var topSprite = this.moveSprites[0];
+        var nextSprite = this._moveSprites[1];
+        var topSprite = this._moveSprites[0];
 
         var center = null;
 
         let lineWidth = 20;
         // this.removeChild(currentDrawDode);
         var lastDrawNode = new cc.DrawNode();
-        currentDrawDodeArr.push(lastDrawNode);
+        _currentDrawDodeArr.push(lastDrawNode);
         this.addChild(lastDrawNode);
-        currentDrawDode = lastDrawNode;
+        _currentDrawDode = lastDrawNode;
 
         // var point1 =  this.convertToNodeSpace(nextSprite.getPosition());
         // var point2 = this.convertToNodeSpace(topSprite.getPosition());
@@ -419,7 +419,7 @@ var WriteHanziLayer = cc.Layer.extend({
                 var y = cc.winSize.height-finalPathArray[counter+2]*ratio;
 
                 // cc.log("y>>>>>>",x,y,finalPathArray[counter+2]*ratio);
-                this.m_drawNode.drawDot(cc.p(x,offset -y),0.5,cc.color.RED);
+                this._m_drawNode.drawDot(cc.p(x,offset -y),0.5,cc.color.RED);
                 lastPos = cc.p(x,offset-y);
                 counter += 3;
 
@@ -430,7 +430,7 @@ var WriteHanziLayer = cc.Layer.extend({
                 var x2 = finalPathArray[counter+3]*ratio+_Offset_x;
                 var y2 = cc.winSize.height - finalPathArray[counter+4]*ratio;
 
-                this.m_drawNode.drawQuadBezier(lastPos, cc.p(x1,offset-y1), cc.p(x2,offset-y2), 50, lineWidth, cc.color.RED);
+                this._m_drawNode.drawQuadBezier(lastPos, cc.p(x1,offset-y1), cc.p(x2,offset-y2), 50, lineWidth, cc.color.RED);
                 lastPos = cc.p(x2,offset-y2);
                 counter += 5;
             }
@@ -438,7 +438,7 @@ var WriteHanziLayer = cc.Layer.extend({
                 var x = finalPathArray[counter+1]*ratio+_Offset_x;
                 var y =cc.winSize.height- finalPathArray[counter+2]*ratio;
 
-                this.m_drawNode.drawSegment(lastPos,cc.p(x,offset-y),0.5,cc.color.RED);
+                this._m_drawNode.drawSegment(lastPos,cc.p(x,offset-y),0.5,cc.color.RED);
                 lastPos = cc.p(x,offset-y);
 
                 counter += 3;

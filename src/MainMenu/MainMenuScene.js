@@ -129,8 +129,6 @@ var MainMenuLayer = cc.Layer.extend({
         this.listView.addEventListener(this.selectedItemEvent, this);
         // this._mainNode.addChild(this.listView);
 
-
-
         this.addChild(this.listView);
 
         this._array = [];
@@ -218,7 +216,6 @@ var MainMenuLayer = cc.Layer.extend({
     //     cc.director.runScene(new cc.TransitionFade(0.3, new HitMouseScene()));
     //
     // },
-
 
 });
 

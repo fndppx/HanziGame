@@ -1,13 +1,12 @@
 var MoveSprite = cc.Sprite.extend({
     _rect : null,
     _enableMoved:true,
-    callback:null,
-    posCallback:null,
+    _callback:null,
+    _posCallback:null,
     that:null,
     _startPoint:null,
-    drawNode:null,
+    _drawNode:null,
     _lastPoint:null,
-    lineWidth:10,
     _isntersection:false,
     _listener:null,
     _enableTouch:false,
@@ -15,21 +14,15 @@ var MoveSprite = cc.Sprite.extend({
         this._super(aTexture);
         this._rect = cc.rect(0, 0, this.getContentSize().width, this.getContentSize().height);
 
-
         var drawNode =new cc.DrawNode();
-        this.drawNode = drawNode;
+        this._drawNode = drawNode;
         this.addChild(drawNode,10);
         that = this;
 
     },
     //回调
     callbackBlk:function(callback){
-        this.callback = callback;
-
-    },
-
-    callbackSetPositionBlk:function(posCallback){
-        this.posCallback = posCallback;
+        this._callback = callback;
 
     },
 
@@ -71,7 +64,7 @@ var MoveSprite = cc.Sprite.extend({
         //记录点
         _startPoint = pos;
 
-        that.callback(touch.getLocation(),_startPoint);
+        that._callback(touch.getLocation(),_startPoint);
 
         return true;
     },
@@ -83,7 +76,7 @@ var MoveSprite = cc.Sprite.extend({
         var pos = touch.getLocation();
 
         var lastPos = touch.getPreviousLocation();
-        cc.log(that.drawNode);
+        cc.log(that._drawNode);
 
         var target = event.getCurrentTarget();
         var delta = touch.getDelta();
@@ -93,11 +86,11 @@ var MoveSprite = cc.Sprite.extend({
 
         target.setPosition(cc.p(target.x+delta.x,target.y+delta.y));
 
-        that.callback(pos,_startPoint);
+        that._callback(pos,_startPoint);
         },
 
     drawNodeClear:function(){
-        that.drawNode.clear();
+        that._drawNode.clear();
         //that.setPosition(_startPoint);
     },
 

@@ -131,8 +131,6 @@ var FindWordImgLayer = cc.LayerColor.extend({
 
     },
 
-
-
     onEnter:function(){
      this._super();
         // 109+this._bgImageView.y-this.getContentSize().height/2)

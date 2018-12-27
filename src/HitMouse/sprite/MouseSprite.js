@@ -11,8 +11,6 @@ var  MouseSprite = cc.Sprite.extend({
         label.color = cc.color.RED;
         this.addChild(label);
         this._title = title;
-
-
     },
 
     currentTitle:function(){
@@ -39,7 +37,6 @@ var  MouseSprite = cc.Sprite.extend({
         var easeMoveUp =  moveUp.easing(cc.easeInOut(3))
 
         var easeMoveDown = easeMoveUp.reverse();
-        // var laugh = self.createAnimation('mole_laugh', [1,2,3]);
 
         //向上移动的回调
         var moveUpCallback = cc.callFunc(function () {

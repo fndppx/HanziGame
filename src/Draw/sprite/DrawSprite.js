@@ -1,14 +1,11 @@
 var DrawSprite = cc.DrawNode.extend({
 
-    disappearAction:null,//消失动画
 
     onEnter:function () {
         cc.log("onEnter");
         this._super();
 
-
         this.addTouchEventListener();
-
 
     },
 

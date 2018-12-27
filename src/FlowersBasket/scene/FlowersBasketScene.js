@@ -5,8 +5,9 @@ var FlowersBasketLayer = cc.Layer.extend({
     _flowersBasketSpriteArray:null,
     _totalCount:0,
 
-
     _layout:null,
+
+    _contentArray:['语文课','历史','叽叽叽叽','测试时尚','测','吃的二二二二二二'],
     ctor:function() {
         this._super();
         var layer = new cc.LayerColor(cc.color(123,204,204,255));
@@ -26,55 +27,10 @@ var FlowersBasketLayer = cc.Layer.extend({
         button.addTouchEventListener(function(){
             cc.director.runScene(new cc.TransitionFade(0.3, new MainMenuScene()));
 
-
         },this);
         this.addChild(button);
 
-        this.layout = this.createLayout();
-
-        var layoutRect = this.layout.getContentSize();
-        this.layout.setBackGroundColorType(ccui.Layout.BG_COLOR_SOLID);
-        this.layout.setBackGroundColor(cc.color.RED);
-
-        // var backgroundRect = background.getContentSize();
-        this.layout.x = 100;
-        this.layout.y = 100;
-        this.addChild(this.layout);
-
-
-        var text = new ccui.Text("ajkdaf", "Marker Felt", 20);
-        // text.attr({
-        //         //     string: "adkfha",
-        //         //     font: "30px AmericanTypewriter",
-        //         //     // x: this._widget.width / 2,
-        //         //     // y: this._widget.height / 2 + text.height / 4
-        //         // });
-        text.setString("text11231");
-        // text.setFontSize(30);
-        this.layout.addChild(text);
-
-        var text1 = new ccui.LabelTTF("ajkdaf", "Marker Felt", 20);
-        text1.setString("text2");
-
-        this.layout.addChild(text1);
-
-        var lp1 = new ccui.LinearLayoutParameter();
-        text.setLayoutParameter(lp1);
-        lp1.setGravity(ccui.LinearLayoutParameter.LEFT);
-        lp1.setMargin(new ccui.Margin(0, 10, 10, 10));
-
-
-        var lp2 = new ccui.LinearLayoutParameter();
-        text1.setLayoutParameter(lp2);
-        lp2.setGravity(ccui.LinearLayoutParameter.LEFT);
-        lp2.setMargin(new ccui.Margin(10, 10, 0, 10));
-
-
-
-
-
-        return;
-        // this._flowersBasketArray = ['科目','时间','人称'];
+        // return;
 
         this._flowersBasketArray = [{'type':'0','name':'科目'},{'type':'1','name':'时间'},{'type':'2','name':'人称'}];
 
@@ -105,20 +61,48 @@ var FlowersBasketLayer = cc.Layer.extend({
         var wordsGapWidth = 5;
         this._totalCount = this._wordsArray.length;
         var self = this;
+
+        this.layout = this.createLayout();
+        var layoutRect = this.layout.getContentSize();
+        this.layout.setBackGroundColorType(ccui.Layout.BG_COLOR_SOLID);
+        this.layout.setBackGroundColor(cc.color.RED);
+        this.layout.x = GC.w_2-150;
+        this.layout.y = 10;
+        // this.addChild(this.layout);
+
+        var rectX = 0;
+        var rectY = this.layout.getContentSize().height-20;
+
+        var gapX = 10;
+
         for (var i = 0; i <this._wordsArray.length ; i++) {
             var wordDic = this._wordsArray[i];
             var word = wordDic['name'];
+
             var flowers = new FlowersSprite( word);
             flowers._type = wordDic['type'];
             flowers.setAnchorPoint(0, 0);
-            flowers.x = 50 + wordsGapWidth + (70 + wordsGapWidth) * i;
-            flowers.y = 100;
-            flowers.setContentSize(50, 28);
-            this.addChild(flowers, 20);
+
+            var height = flowers.getContentSize().height;
+
+            flowers.x = rectX+gapX;
+            flowers.y = rectY;
+
+            if (rectX+gapX+flowers.getContentSize().width > this.layout.getContentSize().width){
+                rectY -= height;
+                flowers.x = gapX;
+                flowers.y = rectY;
+            }
+
+            rectX += flowers.getContentSize().width+gapX;
+            this.addChild(flowers,10);
 
             // var s
             flowers.setMoveBlk(function (p) {
-                cc.log('ppp',p);
+                cc.log('ppp',p.x);
+                // self.convertToWorldSpace(p);
+
+               // var postion = p.getParent().convertToWorldSpace(p.getPosition());
 
                 var rect = cc.rect(p.x,p.y,p.width,p.height);
 
@@ -160,21 +144,15 @@ var FlowersBasketLayer = cc.Layer.extend({
                                 alert.removeFromParent();
                             }, 1000);
                         }
-
                     }
-
                 }
-
             });
         }
-
     },
 
     createLayout: function () {
         var layout = new ccui.Layout();
-        layout.setLayoutType(ccui.Layout.LINEAR_HORIZONTAL);
-        layout.setClippingEnabled(true);
-        layout.setContentSize(cc.size(100, 150));
+        layout.setContentSize(cc.size(300, 150));
         return layout;
     },
 });
