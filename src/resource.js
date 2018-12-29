@@ -24,7 +24,7 @@
 
 var res = {
     HelloWorld_png : "res/bear.png",
-    BackGround_png : "res/background.png",
+    BackGround_png : "res/bg.png",
     Start_N_png : "res/start_N.png",
     Start_S_png : "res/start_S.png",
     Sushi_plist : "res/sushi.plist",
@@ -41,6 +41,17 @@ var res = {
     flower_basket:"res/FlowerBasket/basket.png",
     button_bg:"res/button.png",
     findImgBg:"res/FindWordInImg/findImg.png",
+
+
+
+    Card_back : "res/Card/card_back.jpg",
+    Card_show : "res/Card/cardShow.jpg",
+    // Card_show : "res/Card/cardhow.jpg",
+
+    backtotoppressed : "res/SetsOfWords/backtotoppressed.png",
+    backtotopnormal : "res/SetsOfWords/backtotopnormal.png",
+
+    Record_icon : "res/record_icon.jpg",
 
 
 

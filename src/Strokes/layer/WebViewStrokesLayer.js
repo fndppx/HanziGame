@@ -16,8 +16,10 @@ _webView:null,
 
     initWebView:function(){
         var self = this;
-
+        // https://www.baidu.com
         var webView = new ccui.WebView("src/Strokes/layer/share-test.html");
+        // var webView = new ccui.WebView("https://www.baidu.com");
+
         webView.setBounces(true);
         // webView.setTouchEnabled(false);
         // webView.touchEnabled(false);

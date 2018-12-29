@@ -70,7 +70,7 @@ var FlowersBasketLayer = cc.Layer.extend({
         this.layout.y = 10;
         // this.addChild(this.layout);
 
-        var rectX = 0;
+        var rectX = 40;
         var rectY = this.layout.getContentSize().height-20;
 
         var gapX = 10;
@@ -88,7 +88,7 @@ var FlowersBasketLayer = cc.Layer.extend({
             flowers.x = rectX+gapX;
             flowers.y = rectY;
 
-            if (rectX+gapX+flowers.getContentSize().width > this.layout.getContentSize().width){
+            if (rectX+gapX+flowers.getContentSize().width > 500){
                 rectY -= height;
                 flowers.x = gapX;
                 flowers.y = rectY;

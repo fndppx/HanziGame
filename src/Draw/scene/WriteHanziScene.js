@@ -2,7 +2,7 @@
 var _outlineDictionary = [];
 var _currentDrawDode = null;
 var _currentDrawDodeArr = [];
-var _graphics_dictionary = [];
+// var _graphics_dictionary = [];
 var _hanziArr = ["天","蒙","辫","棚","靠","固","烂","界","易","精","愿","鑫","邋"];
 var _lastPoint = null;
 
@@ -23,6 +23,7 @@ var WriteHanziLayer = cc.Layer.extend({
     ctor:function(){
         this._super();
 
+        _currentDrawDodeArr = [];
         var aREx = "res/graphics.txt";
         this._dataArray = [];
         var that = this;
@@ -110,7 +111,7 @@ var WriteHanziLayer = cc.Layer.extend({
                 that._selectIndex = 0;
             }
 
-            var index = _graphics_dictionary[_hanziArr[that._selectIndex]];
+            var index = graphics_dictionary[_hanziArr[that._selectIndex]];
 
             var data = that._dataArray[index];
             _outlineDictionary = JSON.parse(data);
@@ -153,8 +154,6 @@ var WriteHanziLayer = cc.Layer.extend({
 
         return true;
     },
-
-
 
     setup:function(){
 

@@ -59,7 +59,22 @@
         "src/Strokes/layer/WebViewStrokesLayer.js",
 
 
-        "src/FindWordInImage/scene/FindWordInImgScene.js"
+        "src/FindWordInImage/scene/FindWordInImgScene.js",
+
+
+        "src/card/BackColorLabelText.js",
+        "src/card/TurnCardGameScene.js",
+        "src/card/GameConstant.js",
+
+        "src/SetsOfWords/BackColorText.js",
+        "src/SetsOfWords/SelectWordsScene.js",
+
+        "src/VoiceToText/VoiceToTextScene.js"
+
+
+
+
+
 
 
 

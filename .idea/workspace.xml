@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="666a029f-0247-48e4-9ee9-b76e7fbfdb47" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/res/Card/cardShow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Card/card_back.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Card/card_show.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/SetsOfWords/backtotopnormal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/SetsOfWords/backtotoppressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/record_icon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SetsOfWords/BackColorText.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SetsOfWords/SelectWordsScene.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VoiceToText/VoiceToTextScene.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/card/BackColorLabelText.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/card/GameConstant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/card/TurnCardGameScene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Draw/scene/WriteHanziScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Draw/scene/WriteHanziScene.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Draw/sprite/DrawSprite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Draw/sprite/DrawSprite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Draw/sprite/MoveSprite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Draw/sprite/MoveSprite.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FlowersBasket/scene/FlowersBasketScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FlowersBasket/scene/FlowersBasketScene.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FlowersBasket/sprite/FlowersSprite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/FlowersBasket/sprite/FlowersSprite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HitMouse/sprite/MouseSprite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HitMouse/sprite/MouseSprite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JointTrain/scene/JointTrainScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/JointTrain/scene/JointTrainScene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JointTrain/layer/JointTrainBgLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/JointTrain/layer/JointTrainBgLayer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainMenu/MainMenuScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenu/MainMenuScene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Strokes/layer/WebViewStrokesLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strokes/layer/WebViewStrokesLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resource.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resource.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,18 +43,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameTools.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tools/GameTools.js">
+      <file leaf-file-name="VoiceToTextScene.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VoiceToText/VoiceToTextScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1910" />
+            <state relative-caret-position="1650">
+              <caret line="110" selection-start-line="110" selection-end-line="110" />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HitMouseAlert.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/HitMouse/layer/HitMouseAlert.js">
+      <file leaf-file-name="resource.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resource.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="480">
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="930">
+              <caret line="84" column="29" selection-start-line="84" selection-end-line="85" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenuScene.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainMenu/MainMenuScene.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1155">
+              <caret line="77" column="87" selection-start-line="77" selection-start-column="87" selection-end-line="77" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StrokesScene.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Strokes/scene/StrokesScene.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebViewStrokesLayer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Strokes/layer/WebViewStrokesLayer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -48,64 +103,36 @@
       <file leaf-file-name="share-test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Strokes/layer/share-test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-748">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="261">
+              <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StrokesMattsLayer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Strokes/layer/StrokesMattsLayer.js">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="graphics.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/graphics.txt">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state relative-caret-position="545">
+              <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="WriteHanziScene.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WriteHanziScene.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Draw/scene/WriteHanziScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            <state relative-caret-position="313">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameConfig.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/GameConfig.js">
+      <file leaf-file-name="StrokeMoveSprite.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Strokes/sprite/StrokeMoveSprite.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="24" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="24" />
+            <state relative-caret-position="180">
+              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DrawSprite.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Draw/sprite/DrawSprite.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoveSprite.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Draw/sprite/MoveSprite.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DrawScene1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Draw/scene/DrawScene1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5929" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DrawScene.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Draw/scene/DrawScene.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-635" />
           </provider>
         </entry>
       </file>
@@ -121,11 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.setTouchEnabled</find>
-      <find>call</find>
-      <find>TouchEnabled</find>
-      <find>onTouchBegan</find>
-      <find>_bgImageView</find>
       <find>DrawNode</find>
       <find>indexOf</find>
       <find>getRealPosition</find>
@@ -140,8 +162,6 @@
       <find>FlowersSprite</find>
       <find>currentDrawDode</find>
       <find>currentDrawDodeArr</find>
-      <find>graphics_dictionary</find>
-      <find>hanziArr</find>
       <find>moveSprites</find>
       <find>m_drawNode</find>
       <find>callback</find>
@@ -149,8 +169,15 @@
       <find>that</find>
       <find>drawNode</find>
       <find>lineWidth</find>
-      <find>disappearAction</find>
       <find>callbackSetPositionBlk</find>
+      <find>disappearAction</find>
+      <find>Record_icon</find>
+      <find>hanziArr</find>
+      <find>graphics_dictionary</find>
+      <find>setVisible</find>
+      <find>webView</find>
+      <find>_graphics_dictionary</find>
+      <find>_currentDrawDodeArr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/Draw/sprite/wordSprite.js" />
         <option value="$PROJECT_DIR$/src/HitMouse/layer/HitMouseAlert.js" />
         <option value="$PROJECT_DIR$/src/Draw/layer/DrawBgLayer.js" />
-        <option value="$PROJECT_DIR$/src/JointTrain/layer/JointTrainBgLayer.js" />
         <option value="$PROJECT_DIR$/src/HitMouse/scene/HitMouseScene.js" />
         <option value="$PROJECT_DIR$/src/HitMouse/layer/BaseLayer.js" />
         <option value="$PROJECT_DIR$/src/FlowersBasket/layer.js" />
@@ -179,24 +205,29 @@
         <option value="$PROJECT_DIR$/src/Strokes/sprite/StrokeMoveSprite.js" />
         <option value="$PROJECT_DIR$/src/MainMenu/share-test.html" />
         <option value="$PROJECT_DIR$/src/Strokes/layer/HanziWriter.js" />
-        <option value="$PROJECT_DIR$/src/Strokes/layer/WebViewStrokesLayer.js" />
-        <option value="$PROJECT_DIR$/src/Strokes/scene/StrokesScene.js" />
-        <option value="$PROJECT_DIR$/project.json" />
-        <option value="$PROJECT_DIR$/src/resource.js" />
         <option value="$PROJECT_DIR$/src/Strokes/layer/share-test.html" />
         <option value="$PROJECT_DIR$/src/HitMouse/layer/HitMouseBgLayer.js" />
-        <option value="$PROJECT_DIR$/src/FindWordInImage/scene/FindWordInImgScene.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/src/config/GameConfig.js" />
         <option value="$PROJECT_DIR$/src/FlowersBasket/sprite/FlowersSprite.js" />
-        <option value="$PROJECT_DIR$/src/FlowersBasket/scene/FlowersBasketScene.js" />
         <option value="$PROJECT_DIR$/src/HitMouse/sprite/MouseSprite.js" />
         <option value="$PROJECT_DIR$/src/JointTrain/scene/JointTrainScene.js" />
-        <option value="$PROJECT_DIR$/src/MainMenu/MainMenuScene.js" />
-        <option value="$PROJECT_DIR$/src/Draw/scene/WriteHanziScene.js" />
         <option value="$PROJECT_DIR$/src/Draw/sprite/MoveSprite.js" />
         <option value="$PROJECT_DIR$/src/Draw/sprite/DrawSprite.js" />
+        <option value="$PROJECT_DIR$/src/FindWordInImage/scene/FindWordInImgScene.js" />
+        <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/src/JointTrain/layer/JointTrainBgLayer.js" />
+        <option value="$PROJECT_DIR$/src/card/TurnCardGameScene.js" />
+        <option value="$PROJECT_DIR$/src/SetsOfWords/SelectWordsScene.js" />
+        <option value="$PROJECT_DIR$/src/FlowersBasket/scene/FlowersBasketScene.js" />
+        <option value="$PROJECT_DIR$/project.json" />
+        <option value="$PROJECT_DIR$/src/app.js" />
+        <option value="$PROJECT_DIR$/src/MainMenu/MainMenuScene.js" />
+        <option value="$PROJECT_DIR$/src/resource.js" />
+        <option value="$PROJECT_DIR$/src/VoiceToText/VoiceToTextScene.js" />
+        <option value="$PROJECT_DIR$/src/Strokes/scene/StrokesScene.js" />
+        <option value="$PROJECT_DIR$/src/Strokes/layer/WebViewStrokesLayer.js" />
+        <option value="$PROJECT_DIR$/src/Draw/scene/WriteHanziScene.js" />
       </list>
     </option>
   </component>
@@ -212,10 +243,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="39" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="829" />
+    <option name="height" value="758" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -225,6 +255,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,30 +272,6 @@
               <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="FindWordInImg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="FlowerBasket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="HitMouse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="JointTrain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
@@ -319,115 +326,19 @@
               <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FindWordInImage" type="462c0819:PsiDirectoryNode" />
-              <item name="scene" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FlowersBasket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FlowersBasket" type="462c0819:PsiDirectoryNode" />
-              <item name="scene" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FlowersBasket" type="462c0819:PsiDirectoryNode" />
-              <item name="sprite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="HitMouse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="HitMouse" type="462c0819:PsiDirectoryNode" />
-              <item name="layer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="HitMouse" type="462c0819:PsiDirectoryNode" />
-              <item name="scene" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="HitMouse" type="462c0819:PsiDirectoryNode" />
-              <item name="sprite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="JointTrain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="JointTrain" type="462c0819:PsiDirectoryNode" />
-              <item name="layer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="JointTrain" type="462c0819:PsiDirectoryNode" />
-              <item name="scene" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="JointTrain" type="462c0819:PsiDirectoryNode" />
-              <item name="sprite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="MainMenu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SpellWords" type="462c0819:PsiDirectoryNode" />
+              <item name="SetsOfWords" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="SpellWords" type="462c0819:PsiDirectoryNode" />
-              <item name="layer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SpellWords" type="462c0819:PsiDirectoryNode" />
-              <item name="scene" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SpellWords" type="462c0819:PsiDirectoryNode" />
-              <item name="sprite" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
@@ -460,13 +371,12 @@
               <item name="HanziGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="HanziGame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Tools" type="462c0819:PsiDirectoryNode" />
+              <item name="VoiceToText" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -478,16 +388,16 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/FindWordInImg" />
-      <recent name="$PROJECT_DIR$/src/Strokes/layer" />
-      <recent name="$PROJECT_DIR$/src/MainMenu" />
-      <recent name="$PROJECT_DIR$/res" />
-      <recent name="$PROJECT_DIR$/src/SpellWords/layer" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/FlowerBasket" />
       <recent name="$PROJECT_DIR$/src/Strokes/scene" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res" />
+      <recent name="$PROJECT_DIR$/src/VoiceToText" />
+      <recent name="$PROJECT_DIR$/res/SetsOfWords" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/card" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -564,14 +474,17 @@
       <workItem from="1545615234205" duration="18686000" />
       <workItem from="1545701524852" duration="3140000" />
       <workItem from="1545788160400" duration="21040000" />
-      <workItem from="1545874787483" duration="23771000" />
+      <workItem from="1545874787483" duration="24699000" />
+      <workItem from="1545981691415" duration="424000" />
+      <workItem from="1545982360432" duration="10793000" />
+      <workItem from="1546046984740" duration="1367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278089000" />
+    <option name="totallyTimeSpent" value="291601000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -581,17 +494,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="23" width="1440" height="829" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="758" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22128259" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49964765" weight="0.329235" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32786885" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003524" side_tool="true" weight="0.329235" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49964765" weight="0.329235" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36459908" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49964765" weight="0.329235" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -600,7 +513,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329235" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32880434" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -641,148 +554,13 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Strokes/layer/StrokesMattsLayer.js</url>
           <line>5</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/loading.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/luobu.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/small_p.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/start_N.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/start_S.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sushi.plist">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sushi.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/trace_ba_1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/trace_ba_1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resource.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/extensions/ccui/layouts/UILayoutParameter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-x/cocos/scripting/js-bindings/auto/api/jsb_cocos2dx_ui_auto_api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35775">
-          <caret line="2385" selection-start-line="2385" selection-end-line="2385" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/labelttf/CCLabelTTF.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="116" column="33" lean-forward="true" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/CCDrawingPrimitivesWebGL.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="305" column="4" selection-start-line="305" selection-start-column="4" selection-end-line="305" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/graphics.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="277">
-          <caret line="564" column="54" lean-forward="true" selection-start-line="564" selection-start-column="54" selection-end-line="564" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Draw/layer/DrawBgLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.webapp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/extensions/ccui/layouts/UILayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="1557" column="33" lean-forward="true" selection-start-line="1557" selection-start-column="33" selection-end-line="1557" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="91" column="47" selection-start-line="91" selection-start-column="47" selection-end-line="91" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="90" column="43" lean-forward="true" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/extensions/ccui/uiwidgets/UIButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="198" column="4" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/extensions/ccui/uiwidgets/UIText.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="457" column="33" lean-forward="true" selection-start-line="457" selection-start-column="33" selection-end-line="457" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/extensions/cocostudio/armature/datas/CCDatas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="230" column="25" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-x/cocos/scripting/js-bindings/auto/api/jsb_cocos2dx_auto_api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -790,75 +568,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FindWordInImage/scene/FindWordInImgScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-784">
-          <caret line="121" column="42" lean-forward="true" selection-start-line="121" selection-start-column="42" selection-end-line="121" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FlowersBasket/scene/FlowersBasketScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1321">
-          <caret line="43" column="15" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FlowersBasket/sprite/FlowersBasketSprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FlowersBasket/sprite/FlowersSprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1006">
-          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HitMouse/layer/BaseLayer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HitMouse/layer/HitMouseBgLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2720">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HitMouse/scene/HitMouseScene.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HitMouse/sprite/MouseSprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JointTrain/layer/JointTrainBgLayer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JointTrain/scene/JointTrainScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="105" column="3" selection-start-line="105" selection-start-column="3" selection-end-line="105" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JointTrain/sprite/TrainCarriageSprite.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-920">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainMenu/MainMenuScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3255">
-          <caret line="217" column="9" selection-start-line="217" selection-start-column="9" selection-end-line="217" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -870,48 +583,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SpellWords/layer/WordsPickerView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1264">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/GameTools.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1910" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HitMouse/layer/HitMouseAlert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Strokes/layer/share-test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
+        <state relative-caret-position="-1264" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Strokes/layer/StrokesMattsLayer.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/GameConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Draw/scene/WriteHanziScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Draw/scene/DrawScene1.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -934,6 +610,246 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FindWordInImage/scene/FindWordInImgScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1965">
+          <caret line="131" column="6" selection-start-line="131" selection-start-column="6" selection-end-line="131" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FlowersBasket/sprite/FlowersSprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitMouse/layer/BaseLayer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitMouse/layer/HitMouseAlert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitMouse/layer/HitMouseBgLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitMouse/scene/HitMouseScene.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitMouse/sprite/MouseSprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.cocos-project.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tools/GameTools.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/FlowerBasket/basket.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/FindWordInImg/findImg.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/bear.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/HelloWorld.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.webapp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StartScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-185" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Draw/layer/DrawBgLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JointTrain/scene/JointTrainScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="107" selection-start-line="107" selection-end-line="115" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JointTrain/layer/JointTrainBgLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FlowersBasket/sprite/FlowersBasketSprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="79" column="33" lean-forward="true" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/GameConstant.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/bg.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/trace_ba_1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SetsOfWords/BackColorText.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/BackColorLabelText.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/card/TurnCardGameScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="177" column="13" selection-start-line="177" selection-start-column="13" selection-end-line="177" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SetsOfWords/SelectWordsScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="93" column="15" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FlowersBasket/scene/FlowersBasketScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="90" column="65" selection-start-line="90" selection-start-column="65" selection-end-line="90" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="71" column="41" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/GameConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="84" column="29" selection-start-line="84" selection-end-line="85" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VoiceToText/VoiceToTextScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainMenu/MainMenuScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="77" column="87" selection-start-line="77" selection-start-column="87" selection-end-line="77" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Strokes/scene/StrokesScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Strokes/sprite/StrokeMoveSprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Strokes/layer/WebViewStrokesLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Strokes/layer/share-test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/graphics.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="545">
+          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Draw/scene/WriteHanziScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
         </state>
       </provider>
     </entry>

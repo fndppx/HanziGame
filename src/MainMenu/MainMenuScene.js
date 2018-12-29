@@ -4,9 +4,9 @@ var MainMenuLayer = cc.Layer.extend({
     _backgroundLayer : null,
     _touchLayer      : null,
     listView :null,
-    _spawnCount:8,
+    _spawnCount:11,
     _array:[],
-    _totalCount: 8,
+    _totalCount: 11,
     _dataSource:[],
     ctor : function(){
 
@@ -106,6 +106,29 @@ var MainMenuLayer = cc.Layer.extend({
                 title:"图片与勾勒",
                 testScene:function () {
                     cc.director.runScene(new cc.TransitionFade(0.3, new FindWordImgScene()));
+
+                }
+            },
+
+            {
+                title:"翻牌",
+                testScene:function () {
+                    cc.director.pushScene(new cc.TransitionFade(0.3, new TurnCardGameScene()));
+
+                }
+            },
+
+            {
+                title:"词语归类",
+                testScene:function () {
+                    cc.director.pushScene(new cc.TransitionFade(0.3, new WordsScene()));
+
+                }
+            },
+            {
+                title:"语音",
+                testScene:function () {
+                    cc.director.pushScene(new cc.TransitionFade(0.3, new VoiceToTextScene()));
 
                 }
             },

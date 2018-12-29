@@ -55,16 +55,15 @@ var HelloWorldLayer = cc.Layer.extend({
         });
         this.addChild(this.sprite, 0);
 
-
-        var player = new ccui.VideoPlayer(res.s_video)
-        this.addChild(player, 1, 1)
-        this.videoPlayer_ = player
-        player.setContentSize(395, 290)
-        player.setPosition(g_size.width * 0.5, -145)
-        var that = this
-        player.setEventListener(ccui.VideoPlayer.EventType.COMPLETED, function () {
-            console.log("over")
-        })
+        // var player = new ccui.VideoPlayer(res.s_video)
+        // this.addChild(player, 1, 1)
+        // this.videoPlayer_ = player
+        // player.setContentSize(395, 290)
+        // player.setPosition(g_size.width * 0.5, -145)
+        // var that = this
+        // player.setEventListener(ccui.VideoPlayer.EventType.COMPLETED, function () {
+        //     console.log("over")
+        // })
 
         return true;
     }
