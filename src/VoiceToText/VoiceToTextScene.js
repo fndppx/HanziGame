@@ -121,7 +121,28 @@ var VoiceToTextLayer = cc.Layer.extend({
                 return false;
             }});
             cc.eventManager.addListener(this.touchListener,sender);
-    }
+    },
+
+    onEnter:function () {
+        this._super();
+        if (cc.sys.OS_IOS) {
+            var ret = jsb.reflection.callStaticMethod("JSBManager",
+                "sceneOnEnter");
+        }else {
+
+        }
+    },
+
+    onEnd:function(){
+        this._super();
+
+        if (cc.sys.OS_IOS) {
+            var ret = jsb.reflection.callStaticMethod("JSBManager",
+                "sceneOnEnded");
+        }else {
+
+        }
+    },
 });
 
 

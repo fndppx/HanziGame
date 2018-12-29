@@ -54,6 +54,10 @@ var res = {
     Record_icon : "res/record_icon.jpg",
 
 
+    HanziHtml : "res/share-test.html",
+
+
+
 
 
 };
